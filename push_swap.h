@@ -6,9 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/22 13:39:35 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/24 02:00:04 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H 
+# define PUSH_SWAP_H
+
+#include <stddef.h>
 
 typedef struct	s_node
 {
@@ -16,4 +21,9 @@ typedef struct	s_node
     struct s_node   *next;
 } t_node;
 
+int	ft_atoi(const char *nptr);
 void	swap(t_node **stack);
+void    push(t_node **src, t_node **dest);
+void	add_back(t_node **lst, t_node *next);
+
+#endif
