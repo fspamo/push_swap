@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-typedef struct s_node
+typedef struct	s_node
 {
     int             value;
     struct s_node   *next;
 } t_node;
 
-// int	handle_small(int *array);
+void	swap(t_node **stack);
