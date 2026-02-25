@@ -6,13 +6,13 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 01:04:42 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/25 01:07:17 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/26 02:16:11 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	five_or_less(t_node )
+void	five_or_less(t_node *a)
 {
-
+	
 }
