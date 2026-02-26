@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 
 t_node *new_lst(int value)
 {
@@ -46,7 +46,10 @@ int	main(int argc, char **argv)
 	b = NULL;
 	(void)b;
 	if (argc < 2)
-		return (0);
+	{
+		write(1, "Error\n", 6);
+		exit;
+	}
 	
 	i = 1;
 	while (i < argc)
