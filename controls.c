@@ -12,6 +12,11 @@
 
 #include "push_swap.h"
 
+void	default_controls(t_node *a)
+{
+	is_sorted(a);
+}
+
 int	is_sorted(t_node *a)
 {
 	while (a && a->next)
