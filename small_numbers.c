@@ -12,6 +12,27 @@
 
 #include "push_swap.h"
 
+// do this
+
+void	two_numbers(t_node	*a)
+{
+	default_controls(a);
+	
+}
+
+void	three_numbers(t_node *a)
+{
+	int	st;
+	int	nd;
+	int	rd;
+
+	st = a->value;
+	nd = a->next->value;
+	rd = a->next->next->value;
+
+	
+}
+
 void	five_or_less(t_node *a)
 {
 	
