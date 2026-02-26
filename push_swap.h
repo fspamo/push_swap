@@ -21,7 +21,7 @@ typedef struct	s_node
     struct s_node   *next;
 } t_node;
 
-int		default_controls(t_node *a);
+void	default_controls(t_node *a);
 
 int		is_sorted(t_node *a);
 int		ft_atoi(const char *nptr);
