@@ -25,6 +25,7 @@ void	default_controls(t_node *a);
 
 int		is_sorted(t_node *a);
 int		ft_atoi(const char *nptr);
+size_t	ft_strlen(const char *s);
 
 void	sa(t_node	**a);
 void	sb(t_node	**a);
