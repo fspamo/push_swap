@@ -16,8 +16,8 @@
 
 void	two_numbers(t_node	*a)
 {
-	if(!default_controls(a))
-		sa(&a);
+	// if(!default_controls(a))
+	// 	sa(&a);
 }
 
 void	three_numbers(t_node *a)

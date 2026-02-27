@@ -11,6 +11,17 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
+
+t_node *new_lst(int value)
+{
+	t_node *node = malloc(sizeof(t_node));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->next = NULL;
+	return (node);
+}
 
 void add_back(t_node **lst, t_node *new_node)
 {

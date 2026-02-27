@@ -14,18 +14,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-t_node *new_lst(int value)
-{
-	t_node *node = malloc(sizeof(t_node));
-	if (!node)
-		return (NULL);
-	node->value = value;
-	node->next = NULL;
-	return (node);
-}
-
-// this shouldn't be pushed in the project
-
 void	print_stack(t_node *stack)
 {
 	t_node	*to_print = stack;
@@ -36,29 +24,40 @@ void	print_stack(t_node *stack)
 	}
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	t_node *a;
-	t_node *b;
-	int i;
+    t_node  *a;
+    t_node  *b;
+    char    *joined;
+    char    **numbers;
+    int     i;
 
-	a = NULL;
-	b = NULL;
-	(void)b;
-	if (argc < 2)
-	{
-		write(1, "Error\n", 6);
-		exit;
-	}
-	
-	i = 1;
-	while (i < argc)
-	{
-		int value = ft_atoi(argv[i]);
-		add_back(&a, new_lst(value));
-		i++;
-	}
-	is_sorted(a);
-	print_stack(a);
-	return (0);
+    a = NULL;
+    b = NULL;
+    (void)b;
+
+    if (argc < 2)
+    {
+        write(1, "Error\n", 6);
+        return (1);
+    }
+    joined = join_args(argc, argv);
+    if (!joined)
+        return (1);
+    numbers = ft_split(joined, ' ');
+    free(joined);
+    if (!numbers)
+        return (1);
+    i = 0;
+    while (numbers[i])
+    {
+        int value = ft_atoi(numbers[i]);
+        add_back(&a, new_lst(value));
+        free(numbers[i]);
+        i++;
+    }
+    free(numbers);
+    is_sorted(a);
+    print_stack(a);
+    return (0);
 }

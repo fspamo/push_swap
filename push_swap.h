@@ -26,6 +26,8 @@ void	default_controls(t_node *a);
 int		is_sorted(t_node *a);
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
+char	**ft_split(char const *s, char c);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 void	sa(t_node	**a);
 void	sb(t_node	**a);
@@ -40,5 +42,9 @@ void	rb(t_node **b);
 void	rr(t_node **b, t_node **a);
 
 void	add_back(t_node **lst, t_node *next);
+t_node *new_lst(int value);
+
+char    *join_args(int argc, char **argv);
+int     total_length(int argc, char **argv);
 
 #endif
