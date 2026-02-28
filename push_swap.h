@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 19:30:43 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/28 23:39:00 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,32 +21,39 @@ typedef struct	s_node
     struct s_node   *next;
 } t_node;
 
-void	default_controls(t_node *a);
+void		default_controls(t_node *a);
+int			input_counter(t_node	*a);
 
 void		print_error(void);
 int			is_sorted(t_node *a);
-int			is_duped(t_node *a);
+void		is_duped(t_node *a);
 long int	ft_so_long_atoi(const char *nptr);
 size_t		ft_strlen(const char *s);
 char		**ft_split(char const *s, char c);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
 
-void	sa(t_node	**a);
-void	sb(t_node	**a);
-void	ss(t_node	**a, t_node **b);
+void		sa(t_node	**a);
+void		sb(t_node	**a);
+void		ss(t_node	**a, t_node **b);
 
-void    pa(t_node **a, t_node **b);
-void    pb(t_node **b, t_node **a);
+void    	pa(t_node **a, t_node **b);
+void    	pb(t_node **b, t_node **a);
+        	
+        	
+void		ra(t_node **a);
+void		rb(t_node **b);
+void		rr(t_node **b, t_node **a);
+void		rra(t_node **a);
+        	
+void		add_back(t_node **lst, t_node *next);
+t_node		*new_lst(int value);
 
+char    	*join_args(int argc, char **argv);
+int     	total_length(int argc, char **argv);
 
-void	ra(t_node **a);
-void	rb(t_node **b);
-void	rr(t_node **b, t_node **a);
-
-void	add_back(t_node **lst, t_node *next);
-t_node *new_lst(int value);
-
-char    *join_args(int argc, char **argv);
-int     total_length(int argc, char **argv);
+void		navigation(t_node *a);
+void		two_numbers(t_node **a);
+void		three_numbers(t_node **a);
+void		five_or_less(t_node **a, t_node **b);
 
 #endif
