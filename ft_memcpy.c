@@ -6,9 +6,11 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/07 13:44:21 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/03 14:45:12 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/27 16:23:49 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
