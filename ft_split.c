@@ -6,11 +6,12 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/13 16:24:45 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/03 14:45:23 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/27 16:26:07 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include "push_swap.h"
 
 static size_t	count_words(char const *s, char c)
 {
