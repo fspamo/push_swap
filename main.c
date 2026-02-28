@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/27 16:25:31 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/28 18:52:42 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	re_arange(int argc, char **argv, t_node **a)
     i = 0;
     while (numbers[i])
     {
-        int value = ft_atoi(numbers[i]);
+        int value = ft_so_long_atoi(numbers[i]);
         add_back(a, new_lst(value));
         free(numbers[i]);
         i++;
