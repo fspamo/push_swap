@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 18:52:42 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/28 23:44:05 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	print_stack(t_node *stack)
 	t_node	*to_print = stack;
 	while (to_print)
 	{
-		printf("%d \n", to_print->value);
+		printf("%d\n", to_print->value);
 		to_print = to_print->next;
 	}
 }
@@ -66,7 +66,8 @@ int main(int argc, char **argv)
     }
 	if (re_arange(argc, argv, &a))
 		return (1);
-    is_sorted(a);
-    print_stack(a);
+	default_controls(a);
+	navigation(a);
+	print_stack(a);
     return (0);
 }
