@@ -6,11 +6,19 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 01:42:06 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 18:25:05 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/28 19:10:22 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include <limits.h>
+#include <unistd.h>
+
+void	print_error(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
 
 long int	ft_so_long_atoi(const char *nptr)
 {
@@ -30,11 +38,11 @@ long int	ft_so_long_atoi(const char *nptr)
 	while ((nptr[i] >= '0' && nptr[i] <= '9') && (nptr[i] != '\0'))
 	{
 		if (final > (LONG_MAX - (nptr[i] - '0')) / 10)
-			return (LONG_MAX);
+			print_error();
 		final = (nptr[i] - '0') + final * 10;
 		i++;
 	}
 	if (sign * final > INT_MAX || sign * final < INT_MIN)
-		return (LONG_MAX);
+		print_error();
 	return (sign * final);
 }
