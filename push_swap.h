@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 18:52:56 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/02/28 19:30:43 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@ typedef struct	s_node
 
 void	default_controls(t_node *a);
 
+void		print_error(void);
 int			is_sorted(t_node *a);
+int			is_duped(t_node *a);
 long int	ft_so_long_atoi(const char *nptr);
 size_t		ft_strlen(const char *s);
 char		**ft_split(char const *s, char c);
