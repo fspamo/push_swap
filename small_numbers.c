@@ -3,8 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   small_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */ /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 01:04:42 by cbozkurt          #+#    #+#             */
 /*   Updated: 2026/03/01 00:58:21 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
@@ -69,7 +68,6 @@ int	find_min_five(t_node *a)
 void	push_min_to_b(t_node **a, t_node **b)
 {
 	int	pos;
-	int	i;
 	int	size;
 
 	pos = find_min_five(*a);
@@ -78,9 +76,7 @@ void	push_min_to_b(t_node **a, t_node **b)
 	if (pos <= size / 2)
 	{
 		while (pos-- > 0)
-		{
 			ra(a);
-		}
 	}
 	else 
 	{
@@ -94,7 +90,8 @@ void	push_min_to_b(t_node **a, t_node **b)
 void	five_or_less(t_node **a, t_node **b)
 {
 	push_min_to_b(a, b);
-	push_min_to_b(a, b);
+	if (input_counter(*a) == 4)
+		push_min_to_b(a, b);
 
 	three_numbers(a);
 	pa(b, a);
