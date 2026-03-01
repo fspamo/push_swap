@@ -21,6 +21,6 @@ void	navigation(t_node	*a)
 		two_numbers(&a);
 	else if (input_counter(a) == 3)
 		three_numbers(&a);
-	else if (input_counter(a) <= 5)
+	else if (input_counter(a) == 5 || input_counter(a) == 4)
 		five_or_less(&a, &b);
 }
