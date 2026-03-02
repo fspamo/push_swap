@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 23:44:05 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/02 22:32:03 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
-void	print_stack(t_node *stack)
+void	print_stack(t_node *a)
 {
-	t_node	*to_print = stack;
+	t_node	*to_print = a;
 	while (to_print)
 	{
 		printf("%d\n", to_print->value);
@@ -61,8 +61,8 @@ int main(int argc, char **argv)
 
     if (argc < 2)
     {
-        write(1, "Error\n", 6);
-        return (1);
+		write(1, "Error\n", 6);
+		return (1);
     }
 	if (re_arange(argc, argv, &a))
 		return (1);
