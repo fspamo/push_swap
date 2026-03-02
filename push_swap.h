@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 23:39:00 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/01 21:56:32 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ void		navigation(t_node *a);
 void		two_numbers(t_node **a);
 void		three_numbers(t_node **a);
 void		five_or_less(t_node **a, t_node **b);
+void		chungus(t_node **a, t_node **b);
 
 #endif
