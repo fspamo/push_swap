@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/02 20:54:54 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/03 01:51:56 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void		rra(t_node **a);
         	
 void		add_back(t_node **lst, t_node *next);
 t_node		*new_lst(int value);
+int			list_size(t_node *a);
 
 char    	*join_args(int argc, char **argv);
 int     	total_length(int argc, char **argv);
@@ -57,5 +58,6 @@ void		three_numbers(t_node **a);
 void		five_or_less(t_node **a, t_node **b);
 void		chungus(t_node **a, t_node **b);
 void		bubble_sortingen(t_node **a);
+void    	index_stack(t_node *a);
 
 #endif

@@ -68,6 +68,6 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	navigation(a);
-	print_stack(a);
+	// print_stack(a);
     return (0);
 }
