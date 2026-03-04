@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 01:47:21 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/04 05:03:01 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/04 22:59:02 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,3 +93,4 @@ void core_keeper(t_node **a, t_node **b)
     mark_list(*a, last_node);
     toss_to_b(a, b);
 }
+

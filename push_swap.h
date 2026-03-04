@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/04 04:58:25 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/04 22:46:32 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,10 @@ int			calc_list_len(t_node *a);
 t_node		*last_lis_node(t_node *a, int max_len);
 void		mark_list(t_node *a, t_node *last);
 void		toss_to_b(t_node **a, t_node **b);
+void		core_keeper(t_node **a, t_node **b);
+
+// useless functions to clear up after debugging
+
+void	print_b_stakk(t_node	*b);
 
 #endif
