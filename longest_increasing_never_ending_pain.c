@@ -92,5 +92,5 @@ void core_keeper(t_node **a, t_node **b)
     last_node = last_lis_node(*a, calc_list_len(*a));
     mark_list(*a, last_node);
     toss_to_b(a, b);
+	print_b_stakk(*b);
 }
-
