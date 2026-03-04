@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 21:09:20 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/02 22:34:28 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/03 23:34:44 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,7 @@ void	navigation(t_node	*a)
 		five_or_less(&a, &b);
 	else if (input_counter(a) >= 6 && input_counter(a) <= 20)
 		bubble_sortingen(&a);
+	else if (input_counter(a) == 30)
+		index_stack(a);
+
 }
