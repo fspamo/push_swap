@@ -55,7 +55,7 @@ int			list_size(t_node *a);
 char    	*join_args(int argc, char **argv);
 int     	total_length(int argc, char **argv);
 
-void		navigation(t_node *a);
+void		navigation(t_node **a);
 void		two_numbers(t_node **a);
 void		three_numbers(t_node **a);
 void		five_or_less(t_node **a, t_node **b);
@@ -71,6 +71,6 @@ void		core_keeper(t_node **a, t_node **b);
 
 // useless functions to clear up after debugging
 
-void	print_b_stakk(t_node	*b);
+void		print_b_stakk(t_node	*b);
 
 #endif
