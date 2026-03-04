@@ -17,17 +17,11 @@ void	print_b_stakk(t_node *b)
 {
 	t_node *instance;
 
-	if (!b)
-	{
-		printf("Stack B is empty\n");
-		return;
-	}
-
 	instance = b;
 	printf("Stack B:\n");
 	while (instance)
 	{
-		printf("%d\n", instance->in_lis);
+		printf("%d\n", instance->value);
 		instance = instance->next;
 	}
 }
