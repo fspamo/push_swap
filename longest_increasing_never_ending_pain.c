@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/03 01:47:21 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/03 01:52:17 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/04 05:03:01 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	*copy_stack(t_node *a, int size)
 	yanked_stack = malloc(size * sizeof(int));
 	if (!yanked_stack)
 		return (0);
-	while (instance && i < size)
+	while (instance)
 	{
 		yanked_stack[i] = instance->value;
 		instance = instance->next;
@@ -35,14 +35,61 @@ int	*copy_stack(t_node *a, int size)
 
 void	sort_array(int *array, int size)
 {
-	
+	int i;
+	int j;
+	int temp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		j = 0;
+		while (j < size - i - 1)
+		{
+			if (array[j] > array[j + 1])
+			{
+				temp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
 
 void    index_stack(t_node *a)
 {
-	//  create a sorted array and pass arguments inside.
-	int	*array;
+	int		*array;
+	t_node	*temp;
+	int		i;
+	int		size;
 
 	array = copy_stack(a, input_counter(a));
-	sort_array(array, );
+	sort_array(array, input_counter(a));
+	size = input_counter(a);
+	temp = a;
+	while (temp)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if (temp->value == array[i])
+			{
+				temp->value = i;
+				break;
+			}
+			i++;
+		}
+		temp = temp->next;
+	}
+}
+
+void core_keeper(t_node **a, t_node **b)
+{
+    t_node *last_node;
+
+    index_stack(*a);
+    last_node = last_lis_node(*a, calc_list_len(*a));
+    mark_list(*a, last_node);
+    toss_to_b(a, b);
 }
