@@ -17,10 +17,11 @@
 
 void	print_stack(t_node *a)
 {
+	printf("A stack:\n");
 	t_node	*to_print = a;
 	while (to_print)
 	{
-		printf("%d\n", to_print->value);
+		printf("%d lis value: %d\n", to_print->value, to_print->in_lis);
 		to_print = to_print->next;
 	}
 }
@@ -67,7 +68,7 @@ int main(int argc, char **argv)
 	if (re_arange(argc, argv, &a))
 		return (1);
 	default_controls(a);
-	navigation(a);
+	navigation(&a);
 	print_stack(a);
     return (0);
 }
