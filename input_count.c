@@ -12,11 +12,6 @@
 
 #include "push_swap.h"
 
-int	number_counter(int *array)
-{
-	
-}
-
 int	input_counter(t_node *a)
 {
 	t_node	*holder;
