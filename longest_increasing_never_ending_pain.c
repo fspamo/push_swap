@@ -93,5 +93,7 @@ void core_keeper(t_node **a, t_node **b)
     mark_list(*a, last_node);
     toss_to_b(a, b);
 	the_hunter(a, b);
+	final_rotate(a);
+
 	print_b_stakk(*b);
 }
