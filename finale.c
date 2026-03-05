@@ -10,6 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// find the min.
-//
-// final rotate
+#include "push_swap.h"
+
+t_node	*find_min(t_node *a)
+{
+	t_node *holder;
+	t_node *to_return;
+
+	holder = a;
+	while (holder)
+	{
+		if (holder->value > to_return->next->value)
+			to_return = holder;
+	}
+	return (to_return);
+}
+
+void	final_rotate(t_node **a)
+{
+	t_node *min;
+
+	min = find_min(*a);
+	rotate_to_target(a, min);
+}
