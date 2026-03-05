@@ -6,13 +6,12 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:15:04 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/02 18:32:12 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/05 04:00:37 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
-
 void	rotate(t_node **a)
 {
 	t_node	*first;
