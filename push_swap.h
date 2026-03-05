@@ -68,6 +68,7 @@ t_node		*last_lis_node(t_node *a, int max_len);
 void		mark_list(t_node *a, t_node *last);
 void		toss_to_b(t_node **a, t_node **b);
 void		core_keeper(t_node **a, t_node **b);
+void		the_hunter(t_node **a, t_node **b);
 
 // useless functions to clear up after debugging
 
