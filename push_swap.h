@@ -69,6 +69,8 @@ void		mark_list(t_node *a, t_node *last);
 void		toss_to_b(t_node **a, t_node **b);
 void		core_keeper(t_node **a, t_node **b);
 void		the_hunter(t_node **a, t_node **b);
+void		rotate_to_target(t_node **a, t_node *target);
+void		final_rotate(t_node **a);
 
 // useless functions to clear up after debugging
 
