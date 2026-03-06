@@ -95,5 +95,5 @@ void core_keeper(t_node **a, t_node **b)
 	the_hunter(a, b);
 	final_rotate(a);
 
-	print_b_stakk(*b);
+	// print_b_stakk(*b);
 }
