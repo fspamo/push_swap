@@ -96,17 +96,14 @@ void	mark_list(t_node *a, t_node *last)
 
 void	toss_to_b(t_node **a, t_node **b)
 {
-	t_node	*holder;
-	int		size;
+	int	size;
 
-	holder = *a;
 	size = list_size(*a);
-	while (size--)
+	while (size-- && *a)
 	{
-		if (holder->in_lis == 0)
+		if ((*a)->in_lis == 0)
 			pb(a, b);
 		else
 			ra(a);
-		holder = *a;
 	}
 }
