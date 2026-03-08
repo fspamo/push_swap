@@ -19,6 +19,9 @@ t_node *new_lst(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = 0;
+	node->lis_len = 0;
+	node->in_lis = 0;
 	node->next = NULL;
 	return (node);
 }
