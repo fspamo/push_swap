@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/08 00:59:30 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/08 18:09:51 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void		two_numbers(t_node **a);
 void		three_numbers(t_node **a);
 void		five_or_less(t_node **a, t_node **b);
 void		bubble_sortingen(t_node **a);
+void		radix(t_node **a, t_node **b);
 
 // useless functions to clear up after debugging
 
