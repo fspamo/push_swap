@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 23:50:39 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/24 23:58:00 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:07:20 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,18 @@ void	r_rotate(t_node **a)
 void	rra(t_node **a)
 {
 	r_rotate(a);
-	write(1, "ra\n", 3);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_node **b)
 {
 	r_rotate(b);
-	write(1, "rb\n", 3);
+	write(1, "rrb\n", 4);
 }
 
-void	rrr(t_node **b, t_node **a)
+void	rrr(t_node **a, t_node **b)
 {
 	r_rotate(b);
 	r_rotate(a);
-	write(1, "rr\n", 3);
+	write(1, "rrr\n", 4);
 }
