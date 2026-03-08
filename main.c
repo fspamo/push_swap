@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/08 13:54:55 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/08 18:14:23 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,6 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	navigation(&a);
+	// print_stack(a);
     return (0);
 }
