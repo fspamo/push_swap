@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/08 18:14:23 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:46:59 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_stack(t_node *a)
 	t_node	*to_print = a;
 	while (to_print)
 	{
-		printf("%d lis value:\n", to_print->value);
+		printf("%d\n", to_print->value);
 		to_print = to_print->next;
 	}
 }
@@ -59,7 +59,6 @@ int main(int argc, char **argv)
     a = NULL;
     b = NULL;
     (void)b;
-
     if (argc < 2)
     {
 		write(1, "Error\n", 6);
@@ -68,7 +67,8 @@ int main(int argc, char **argv)
 	if (re_arange(argc, argv, &a))
 		return (1);
 	default_controls(a);
-	navigation(&a);
+	compute_disorder(a);
+	// navigation(&a);
 	// print_stack(a);
     return (0);
 }

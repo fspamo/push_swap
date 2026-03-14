@@ -20,16 +20,13 @@ void	r_rotate(t_node **a)
 
 	if (!a || !*a || !(*a)->next)
 		return;
-
 	prev = NULL;
 	last = *a;
-
 	while (last->next)
 	{
 		prev = last;
 		last = last->next;
 	}
-
 	prev->next = NULL;
 	last->next = *a;
 	*a = last;  

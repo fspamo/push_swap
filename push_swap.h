@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/08 18:09:51 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/12 14:28:55 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int			list_size(t_node *a);
 
 char    	*join_args(int argc, char **argv);
 int     	total_length(int argc, char **argv);
+int			compute_disorder(t_node *a);
 
 void		navigation(t_node **a);
 void		two_numbers(t_node **a);
