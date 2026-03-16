@@ -31,5 +31,6 @@ int	compute_disorder(t_node *a)
 		j++;
 	}
 	total = i / j;
+	printf("%f", total);
 	return (total);
 }

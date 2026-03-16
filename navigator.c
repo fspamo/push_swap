@@ -15,14 +15,19 @@
 void navigation(t_node **a)
 {
     t_node	*b;
+	t_node	*temp_a;
 	float	disorder;
 
-	disorder = compute_disorder(*a);
+	// temp_a = *a;
+	// disorder = compute_disorder(temp_a);
     b = NULL;
-    if (disorder < 0.2)
-        bubble_sorting(a);
+	bubble_sorting(a);
+    // if (disorder < 0.2)
+    //     bubble_sorting(a);
+    // if (disorder >= 1 && disorder <= 0)
+    //     bubble_sorting(a);
     // else if (disorder >= 0.2 && disorder < 0.5)
         // chunk_based_sorting(a);
-    else if (disorder >= 0.5)
-        radix(a, &b);
+    // if (disorder >= 1 && disorder <= 0)
+    //     radix(a, &b);
 }

@@ -67,10 +67,9 @@ int main(int argc, char **argv)
 	if (re_arange(argc, argv, &a))
 		return (1);
 	default_controls(a);
-	compute_disorder(a);
 	navigation(&a);
-	if (is_sorted(a) == 1)
-		write(1, "OK", 2);
 	print_stack(a);
+	// if (is_sorted(a) == 1)
+	// 	write(1, "OK", 2);
     return (0);
 }

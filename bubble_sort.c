@@ -12,18 +12,6 @@
 
 #include "push_swap.h"
 
-int	list_size(t_node *a)
-{
-	int	i = 0;
-
-	while (a)
-	{
-		i++;
-		a = a->next;
-	}
-	return (i);
-}
-
 void	bubble_sorting(t_node **a)
 {
 	int	size;
@@ -32,19 +20,21 @@ void	bubble_sorting(t_node **a)
 
 	if (!a || !*a)
 		return;
-
-	size = list_size(*a);
+	size = input_counter(*a);
 	i = 0;
-	while (i < size - 1)
+	while (is_sorted(*a))
 	{
-		j = 0;
-		while (j < size - 1)
+		while (i < size - 1)
 		{
-			if ((*a)->value > (*a)->next->value)
-				sa(a);
-			ra(a);
-			j++;
+			j = 0;
+			while (j < size - 1)
+			{
+				if ((*a)->value > (*a)->next->value)
+					sa(a);
+				ra(a);
+				j++;
+			}
+			i++;
 		}
-		i++;
 	}
 }
