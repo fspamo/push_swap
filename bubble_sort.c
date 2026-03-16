@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 20:53:06 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/12 14:47:18 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:35:02 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,19 @@ void	bubble_sorting(t_node **a)
 		return;
 	size = input_counter(*a);
 	i = 0;
-	while (is_sorted(*a))
+	while (i < size)
 	{
-		while (i < size - 1)
+		j = 0;
+		while (j < size - 1)
 		{
-			j = 0;
-			while (j < size - 1)
-			{
-				if ((*a)->value > (*a)->next->value)
-					sa(a);
-				ra(a);
-				j++;
-			}
-			i++;
+			if ((*a)->value > (*a)->next->value)
+				sa(a);
+			ra(a);
+			j++;
 		}
+		j = 0;
+		while (j++ < size - 1)
+			rra(a);
+		i++;
 	}
 }
