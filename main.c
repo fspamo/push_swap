@@ -68,7 +68,9 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	compute_disorder(a);
-	// navigation(&a);
-	// print_stack(a);
+	navigation(&a);
+	if (is_sorted(a) == 1)
+		write(1, "OK", 2);
+	print_stack(a);
     return (0);
 }
