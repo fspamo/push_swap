@@ -24,7 +24,7 @@ int	list_size(t_node *a)
 	return (i);
 }
 
-void	bubble_sortingen(t_node **a)
+void	bubble_sorting(t_node **a)
 {
 	int	size;
 	int	i;

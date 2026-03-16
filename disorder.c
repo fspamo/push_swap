@@ -16,26 +16,20 @@ int	compute_disorder(t_node *a)
 {
 	t_node	*for_pairs;
 	t_node	*for_mistakes;
-	float	i = 0;
-	float	j = 0;
+	float	i;
+	float	j;
+	float	total;
 
+	i = 0;
+	j = 0;
 	for_mistakes = a;
-	for_pairs = a;
-
 	while (for_mistakes->next)
 	{
 		if (for_mistakes->value > for_mistakes->next->value)
 			i++;
 		for_mistakes = for_mistakes->next;
+		j++;
 	}
-	while (for_pairs->next)
-	{
-		if (for_pairs->next->value > for_pairs->value)
-			j++;
-		for_pairs = for_pairs->next;
-	}
-
-	float total = i / j;
-	printf("%f", total);
+	total = i / j;
 	return (total);
 }

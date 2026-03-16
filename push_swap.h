@@ -59,7 +59,7 @@ void		navigation(t_node **a);
 void		two_numbers(t_node **a);
 void		three_numbers(t_node **a);
 void		five_or_less(t_node **a, t_node **b);
-void		bubble_sortingen(t_node **a);
+void		bubble_sorting(t_node **a);
 void		radix(t_node **a, t_node **b);
 
 // useless functions to clear up after debugging
