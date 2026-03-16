@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:20:13 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/12 15:07:05 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/16 16:25:35 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ int	compute_disorder(t_node *a)
 		j++;
 	}
 	total = i / j;
-	printf("%f", total);
 	return (total);
 }
