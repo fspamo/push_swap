@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 21:09:20 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/16 17:05:54 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/18 20:04:02 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,14 @@
 void navigation(t_node **a)
 {
 	t_node	*b;
-	t_node	*temp_a;
 	float	disorder;
 
-	temp_a = *a;
-	disorder = compute_disorder(temp_a);
+	disorder = compute_disorder(*a);
 	b = NULL;
 	if (disorder < 0.2)
 		bubble_sorting(a);
-	/* else if (disorder >= 0.2 && disorder < 0.5) */
-	/* 	chunk_sorting(); */
+	else if (disorder >= 0.2 && disorder < 0.5)
+		radix(a, &b);
 	else if (disorder >= 0.5)
 		radix(a, &b);
 }

@@ -6,8 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/12 14:46:59 by cbozkurt         ###   ########.fr       */
-/*                                                                            */
+/*   Updated: 2026/03/18 23:21:59 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -68,8 +67,6 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	navigation(&a);
-	print_stack(a);
-	// if (is_sorted(a) == 1)
-	// 	write(1, "OK", 2);
+	/* print_stack(a); */
     return (0);
 }

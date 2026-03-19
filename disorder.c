@@ -6,15 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:20:13 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/16 16:25:35 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/19 01:29:27 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	compute_disorder(t_node *a)
+float	compute_disorder(t_node *a)
 {
-	t_node	*for_pairs;
 	t_node	*for_mistakes;
 	float	i;
 	float	j;
