@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/18 20:39:28 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/19 19:20:27 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,5 @@ float		compute_disorder(t_node *a);
 void		navigation(t_node **a);
 void		bubble_sorting(t_node **a);
 void		radix(t_node **a, t_node **b);
-
-// useless functions to clear up after debugging
-
-void		print_b_stakk(t_node	*b);
 
 #endif
