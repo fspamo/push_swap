@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/18 23:21:59 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/19 18:15:16 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -67,6 +67,6 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	navigation(&a);
-	/* print_stack(a); */
+	print_stack(a);
     return (0);
 }
