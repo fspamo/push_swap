@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/19 19:20:27 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/22 15:24:02 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_node
 {
     int             value;
+	int				index;
     struct s_node   *next;
 } t_node;
 
@@ -58,5 +59,6 @@ float		compute_disorder(t_node *a);
 void		navigation(t_node **a);
 void		bubble_sorting(t_node **a);
 void		radix(t_node **a, t_node **b);
+void	chunk_core_indexer(t_node *a);
 
 #endif
