@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 21:09:20 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 15:25:10 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/22 19:53:25 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void navigation(t_node **a)
 	if (disorder < 0.2)
 		bubble_sorting(a);
 	else if (disorder >= 0.2 && disorder < 0.5)
-		radix(a, &b);
+		chunk_sorting(*a);
 	else if (disorder >= 0.5)
 		radix(a, &b);
 }

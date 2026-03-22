@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 15:24:02 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/22 20:00:30 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void		ss(t_node	**a, t_node **b);
 void    	pa(t_node **a, t_node **b);
 void    	pb(t_node **b, t_node **a);
         	
-        	
 void		ra(t_node **a);
 void		rb(t_node **b);
 void		rr(t_node **b, t_node **a);
@@ -55,10 +54,11 @@ int			list_size(t_node *a);
 char    	*join_args(int argc, char **argv);
 int     	total_length(int argc, char **argv);
 float		compute_disorder(t_node *a);
+int			ft_sqrt(int n);
 
 void		navigation(t_node **a);
 void		bubble_sorting(t_node **a);
+void		chunk_sorting(t_node *a);
 void		radix(t_node **a, t_node **b);
-void	chunk_core_indexer(t_node *a);
 
 #endif
