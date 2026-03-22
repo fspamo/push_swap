@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/19 18:15:16 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/22 15:31:43 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -20,7 +20,7 @@ void	print_stack(t_node *a)
 	t_node	*to_print = a;
 	while (to_print)
 	{
-		printf("%d\n", to_print->value);
+		printf("value: %d\n", to_print->value);
 		to_print = to_print->next;
 	}
 }
