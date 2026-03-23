@@ -22,7 +22,7 @@ void navigation(t_node **a)
 	if (disorder < 0.2)
 		bubble_sorting(a);
 	else if (disorder >= 0.2 && disorder < 0.5)
-		chunk_sorting(*a);
+		chunk_sorting(a, &b);
 	else if (disorder >= 0.5)
 		radix(a, &b);
 }
