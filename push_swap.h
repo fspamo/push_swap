@@ -58,7 +58,7 @@ int			ft_sqrt(int n);
 
 void		navigation(t_node **a);
 void		bubble_sorting(t_node **a);
-void		chunk_sorting(t_node *a);
+void		chunk_sorting(t_node **a, t_node **b);
 void		radix(t_node **a, t_node **b);
 
 #endif
