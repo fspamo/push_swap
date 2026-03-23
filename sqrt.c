@@ -12,11 +12,27 @@
 
 int	ft_sqrt(int n)
 {
-	int val;
-	if ((n * n) == val)
+	int	left;
+	int	right;
+	int	result;
+	int	mid;
+
+	mid = 0;
+	left = 0;
+	right = n;
+	result = 0;
+	while (left <= right)
 	{
-
+		mid = left + (right - left) / 2;
+		if (mid * mid == n)
+			return (mid);
+		else if (mid * mid < n)
+		{
+			result = mid;
+			left = mid + 1;
+		}
+		else
+			right = mid - 1;
 	}
-
-	return (val);
+	return (result);
 }
