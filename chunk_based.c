@@ -68,3 +68,51 @@ int	find_max_index(t_node *b)
 	}
 	return (highest); 
 }
+
+int	find_position(t_node *b, int highest)
+{
+	t_node	*holder;
+	int		position;
+
+	holder = b;
+	position = 0;
+	while (holder)
+	{
+		if (holder->index == highest)
+			return (position);
+		position++;
+		holder = holder->next;
+	}
+	return (-1);
+}
+
+void	push_back_to_a(t_node **a, t_node **b)
+{
+	int	max;
+	int	pos;
+	int	size;
+	int steps;
+
+	while (*b)
+	{
+		max = find_max_index(*b);
+		pos = find_position(*b, max);
+		size = input_counter(*b);
+		if (pos <= size / 2)
+			while (pos > 0)
+			{
+				rb(b);
+				pos--;
+			}
+		else
+		{
+			steps = size - pos;
+			while (steps > 0)
+			{
+				rrb(b);
+				steps--;
+			}
+		}
+		pa(a, b);
+	}
+}
