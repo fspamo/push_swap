@@ -24,31 +24,31 @@
 // 	}
 // }
 
-void	chunk_sorting(t_node **a, t_node **b)
+void chunker(t_node **a, t_node **b)
 {
-	int	size;
-	int	chunk;
-	int	i;
+    int size;
+    int chunk;
+    int i;
 
-	size = input_counter(*a);
-	chunk = ft_sqrt(size);
-	i = 0;
-	while (*a)
-	{
-		if ((*a)->index <= i)
-		{
-			pb(a, b);
-			rb(b);
-			i++;
-		}
-		else if ((*a)->index <= i + chunk)
-		{
-			pb(a, b);
-			i++;
-		}
-		else
-			ra(a);
-	}
+    size = input_counter(*a);
+    chunk = ft_sqrt(size);
+    i = 0;
+    while (*a)
+    {
+        if ((*a)->index <= i)
+        {
+            pb(a, b);
+            rb(b);
+            i++;
+        }
+        else if ((*a)->index <= i + chunk)
+        {
+            pb(a, b);
+            i++;
+        }
+        else
+            ra(a);
+    }
 }
 
 int	find_max_index(t_node *b)
@@ -86,13 +86,15 @@ int	find_position(t_node *b, int highest)
 	return (-1);
 }
 
-void	push_back_to_a(t_node **a, t_node **b)
+void	chunk_sorting(t_node **a, t_node **b)
 {
 	int	max;
 	int	pos;
 	int	size;
 	int steps;
 
+	chunk_core_indexer(*a);
+	chunker(a, b);
 	while (*b)
 	{
 		max = find_max_index(*b);
