@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = sqrt.c indexer_chunk.c chunk_based.c bit.c bubble_sort.c controls.c disorder.c ft_memcpy.c ft_so_long_atoi.c ft_split.c ft_strlen.c indexer.c input_count.c lst_helper_functions.c main.c navigator.c parsingen.c push.c rotate.c r_rotate.c swap.c
+SRC = ft_strcmp.c sqrt.c indexer_chunk.c chunk_based.c bit.c bubble_sort.c controls.c disorder.c ft_memcpy.c ft_so_long_atoi.c ft_split.c ft_strlen.c indexer.c input_count.c lst_helper_functions.c main.c navigator.c parsingen.c push.c rotate.c r_rotate.c swap.c
 
 OBJ = $(SRC:.c=.o)
 

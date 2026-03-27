@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 20:00:30 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/26 17:12:54 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ long int	ft_so_long_atoi(const char *nptr);
 size_t		ft_strlen(const char *s);
 char		**ft_split(char const *s, char c);
 void		*ft_memcpy(void *dest, const void *src, size_t n);
+int			ft_strcmp(const char *s1, const char *s2);
+char		*ft_strdup(const char *s);
 
 void		sa(t_node	**a);
 void		sb(t_node	**a);
@@ -57,7 +59,7 @@ float		compute_disorder(t_node *a);
 int			ft_sqrt(int n);
 
 void		chunk_core_indexer(t_node *a);
-void		navigation(t_node **a);
+void		navigation(t_node **a, int strat);
 void		bubble_sorting(t_node **a);
 void		chunk_sorting(t_node **a, t_node **b);
 void		radix(t_node **a, t_node **b);
