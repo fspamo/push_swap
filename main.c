@@ -11,7 +11,6 @@
 
 #include "push_swap.h"
 #include <stdlib.h>
-#include <string.h>
 #include <unistd.h>
 #include <stdio.h>
 
@@ -51,7 +50,7 @@ int	re_arange(int argc, char **argv, t_node **a)
 	return (0);
 }
 
-int	startegy_selector(char *strat)
+int	strategy_selector(char *strat)
 {
 	if (ft_strcmp(strat, "--simple") == 0)
 		return (0);
@@ -73,6 +72,7 @@ int main(int argc, char **argv)
 {
 	t_node  *a;
 	t_node  *b;
+	 int 	strat;
 
 	a = NULL;
 	b = NULL;
@@ -82,10 +82,13 @@ int main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (1);
 	}
-	if (re_arange(argc, argv, &a))
+	strat = strategy_selector(argv[1]);
+	if (strat == -1)
+		return (1);
+	if (re_arange(argc - 1, argv + 1, &a))
 		return (1);
 	default_controls(a);
-	navigation(&a, startegy_selector(argv[1]));
+	navigation(&a, strat);
 	print_stack(a);
 	return (0);
 }
