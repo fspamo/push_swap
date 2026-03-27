@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void navigation(t_node **a, int strat)
 {
 	t_node	*b;
-	/* float	disorder; */
+	float	disorder;
 
-	/* disorder = compute_disorder(*a); */
+	disorder = compute_disorder(*a);
 	b = NULL;
 	if (strat == 0)
 		bubble_sorting(a);
@@ -25,5 +26,13 @@ void navigation(t_node **a, int strat)
 		chunk_sorting(a, &b);
 	else if (strat == 2)
 		radix(a, &b);
-	// DO ADAPTIVE
+	else if (strat == 3)
+	{
+		if (disorder < 0.2)
+			bubble_sorting(a);
+		else if (0.2 <= disorder && disorder < 0.5)
+			chunk_sorting(a, &b);
+		else if (disorder >= 0.5)
+			radix(a, &b);
+	}
 }
