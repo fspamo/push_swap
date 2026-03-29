@@ -6,11 +6,12 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 00:26:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 21:29:34 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/29 15:13:47 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 void	default_controls(t_node *a)
 {
@@ -39,11 +40,14 @@ void	is_duped(t_node *a)
 
 int	is_sorted(t_node *a)
 {
-	while (a && a->next)
+	t_node *temp;
+	
+	temp = a;
+	while (temp && temp->next)
 	{
-		if (a->value > a->next->value)
+		if (temp->value > temp->next->value)
 			return (0);
-		a = a->next;
+		temp = temp->next;
 	}
-	return (1);
+	exit (1);
 }
