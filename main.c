@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/26 17:51:36 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/29 15:55:35 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -41,6 +41,13 @@ int	re_arange(int argc, char **argv, t_node **a)
 	i = 0;
 	while (numbers[i])
 	{
+		if (!is_valid_number(numbers[i]))
+		{
+			while (numbers[i])
+				free(numbers[i++]);
+			free(numbers);
+			print_error();
+		}
 		int value = ft_so_long_atoi(numbers[i]);
 		add_back(a, new_lst(value));
 		free(numbers[i]);
@@ -60,19 +67,15 @@ int	strategy_selector(char *strat)
 		return (2);
 	else if (ft_strcmp(strat, "--adaptive") == 0)
 		return (3);
-	else 
-	{
-		print_error();
-		return (-1);
-	}
-
+	else
+		return (3);
 }
 
 int main(int argc, char **argv)
 {
 	t_node  *a;
 	t_node  *b;
-	 int 	strat;
+	int 	strat;
 
 	a = NULL;
 	b = NULL;
