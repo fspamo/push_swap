@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_join.c                                          :+:      :+:    :+:   */
+/*   parsingen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 01:57:56 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/27 01:58:46 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/29 15:42:11 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ char *join_args(int argc, char **argv)
 	joined = malloc(sizeof(char) * (total_length(argc, argv) + 1));
 	if (!joined)
 		return (NULL);
-
 	i = 1;
 	k = 0;
 	while (i < argc)
