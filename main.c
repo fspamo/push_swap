@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/29 15:55:35 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/03/31 14:10:38 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -75,20 +75,27 @@ int main(int argc, char **argv)
 {
 	t_node  *a;
 	t_node  *b;
-	int 	strat;
+	int     strat;
+	int     offset;
 
 	a = NULL;
 	b = NULL;
 	(void)b;
 	if (argc < 2)
+		print_error();
+	if (argv[1][0] == '-' && argv[1][1] == '-')
 	{
-		write(1, "Error\n", 6);
-		return (1);
+		strat = strategy_selector(argv[1]);
+		offset = 2;
 	}
-	strat = strategy_selector(argv[1]);
-	if (strat == -1)
-		return (1);
-	if (re_arange(argc - 1, argv + 1, &a))
+	else
+	{
+		strat = 3;
+		offset = 1;
+	}
+	if (argc <= offset)
+		print_error();
+	if (re_arange(argc - offset, argv + offset, &a))
 		return (1);
 	default_controls(a);
 	navigation(&a, strat);
