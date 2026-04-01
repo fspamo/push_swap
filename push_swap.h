@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/29 15:53:19 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/01 19:13:04 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_node
 void		default_controls(t_node *a);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
+int			strategy_selector(char *strat);
 
 void		print_error(void);
 int			is_sorted(t_node *a);

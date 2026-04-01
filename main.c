@@ -25,6 +25,27 @@ void	print_stack(t_node *a)
 	}
 }
 
+int	parse_flags(int argc, char **argv, int *strat, int *bench)
+{
+	int	offset;
+
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+	{
+		
+	}
+	if (argv[1][0] == '-' && argv[1][1] == '-')
+	{
+		*strat = strategy_selector(argv[1]);
+		offset = 2;
+	}
+	else
+	{
+		*strat = 3;
+		offset = 1;
+	}
+	return (offset);
+}
+
 int	re_arange(int argc, char **argv, t_node **a)
 {
 	char    *joined;
@@ -77,22 +98,16 @@ int main(int argc, char **argv)
 	t_node  *b;
 	int     strat;
 	int     offset;
-
+	int		bench;
+	
 	a = NULL;
 	b = NULL;
 	(void)b;
+	bench = 0;
+	offset = parse_flags(argc, argv, &strat, &bench);
 	if (argc < 2)
 		print_error();
-	if (argv[1][0] == '-' && argv[1][1] == '-')
-	{
-		strat = strategy_selector(argv[1]);
-		offset = 2;
-	}
-	else
-	{
-		strat = 3;
-		offset = 1;
-	}
+	offset = parse_flags(argc, argv, &strat, &bench);
 	if (argc <= offset)
 		print_error();
 	if (re_arange(argc - offset, argv + offset, &a))
