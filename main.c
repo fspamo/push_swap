@@ -29,19 +29,14 @@ int	parse_flags(int argc, char **argv, int *strat, int *bench)
 {
 	int	offset;
 
-	if (argv[1][0] == '-' && argv[1][1] == '-')
+	offset = 1;
+	while (offset < argc && argv[offset][0] == '-' && argv[offset][1] == '-')
 	{
-		
-	}
-	if (argv[1][0] == '-' && argv[1][1] == '-')
-	{
-		*strat = strategy_selector(argv[1]);
-		offset = 2;
-	}
-	else
-	{
-		*strat = 3;
-		offset = 1;
+		if (ft_strcmp(argv[offset], "--bench") == 0)
+			*bench = 1;
+		else
+			*strat = strategy_selector(argv[offset]);
+		offset++;
 	}
 	return (offset);
 }
@@ -99,7 +94,7 @@ int main(int argc, char **argv)
 	int     strat;
 	int     offset;
 	int		bench;
-	
+
 	a = NULL;
 	b = NULL;
 	(void)b;
@@ -114,6 +109,8 @@ int main(int argc, char **argv)
 		return (1);
 	default_controls(a);
 	navigation(&a, strat);
-	print_stack(a);
+	print_stack(a); // should be removed
+	if (bench == 1)
+		benchmarking();
 	return (0);
 }
