@@ -20,12 +20,14 @@ typedef struct	s_node
     int             value;
 	int				index;
     struct s_node   *next;
+	// 
 } t_node;
 
 void		default_controls(t_node *a);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
+void		benchmarking();
 
 void		print_error(void);
 int			is_sorted(t_node *a);
