@@ -13,11 +13,11 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void	benchmarking()
+void	benchmarking(float disorder, char *strat)
 {
 	// float	disobey;
 	// char 	*strategy;
-	// int		my_opps;
+	// int		total_strat;
 	write(1, "bench mode" ,10);	
 	// if (argc <= offset
 	// 	print_error();

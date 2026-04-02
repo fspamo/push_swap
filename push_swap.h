@@ -20,8 +20,15 @@ typedef struct	s_node
     int             value;
 	int				index;
     struct s_node   *next;
-	// 
 } t_node;
+
+typedef struct s_ops
+{
+    int sa; int sb; int ss;
+    int pa; int pb;
+    int ra; int rb; int rr;
+    int rra; int rrb; int rrr;
+} t_ops;
 
 void		default_controls(t_node *a);
 int			input_counter(t_node *a);
@@ -63,9 +70,9 @@ float		compute_disorder(t_node *a);
 int			ft_sqrt(int n);
 
 void		chunk_core_indexer(t_node *a);
-void		navigation(t_node **a, int strat);
-void		bubble_sorting(t_node **a);
-void		chunk_sorting(t_node **a, t_node **b);
-void		radix(t_node **a, t_node **b);
+void		navigation(t_node **a, int strat, t_ops *ops);
+void		bubble_sorting(t_node **a, t_ops *ops);
+void		chunk_sorting(t_node **a, t_node **b, t_ops *ops);
+void		radix(t_node **a, t_node **b, t_ops *ops);
 
 #endif

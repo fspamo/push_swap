@@ -27,21 +27,22 @@ void    swap(t_node **stack)
     *stack = second;
 }
 
-void	sa(t_node	**a)
+void	sa(t_node **a, t_ops *ops)
 {
 	swap(a);
 	write(1, "sa\n", 3);
+	ops->sa++;
 }
-
-void	sb(t_node	**b)
+void	sb(t_node **b, t_ops *ops)
 {
 	swap(b);
 	write(1, "sb\n", 3);
+	ops->sb++;
 }
-
-void	ss(t_node **a, t_node **b)
+void	ss(t_node **a, t_node **b, t_ops *ops)
 {
 	swap(a);
 	swap(b);
 	write(1, "ss\n", 3);
+	ops->ss++;
 }

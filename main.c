@@ -111,6 +111,6 @@ int main(int argc, char **argv)
 	navigation(&a, strat);
 	print_stack(a); // should be removed
 	if (bench == 1)
-		benchmarking();
+		benchmarking(compute_disorder(a));
 	return (0);
 }
