@@ -10,7 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	benchmark()
+#include <unistd.h>
+#include <stdlib.h>
+
+void	benchmarking()
 {
-	
+	// float	disobey;
+	// char 	*strategy;
+	// int		my_opps;
+	write(1, "bench mode" ,10);	
+	// if (argc <= offset
+	// 	print_error();
+	// if (re_arange(argc - offset, argv + offset, &a))
+	// 	return (1);
+	// default_controls(a);
+	// navigation(&a, strat);
+	// print_stack(a);
+	// return (0);
 }
+
+// void	()
