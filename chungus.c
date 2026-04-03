@@ -24,12 +24,11 @@
 // 	}
 // }
 
-void chunker(t_node **a, t_node **b)
+void chunker(t_node **a, t_node **b, t_ops *ops)
 {
     int size;
     int chunk;
     int i;
-
     size = input_counter(*a);
     chunk = ft_sqrt(size);
     i = 0;
@@ -37,84 +36,48 @@ void chunker(t_node **a, t_node **b)
     {
         if ((*a)->index <= i)
         {
-            pb(a, b);
-            rb(b);
+            pb(a, b, ops);
+            rb(b, ops);
             i++;
         }
         else if ((*a)->index <= i + chunk)
         {
-            pb(a, b);
+            pb(a, b, ops);
             i++;
         }
         else
-            ra(a);
+            ra(a, ops);
     }
 }
 
-int	find_max_index(t_node *b)
+void chunk_sorting(t_node **a, t_node **b, t_ops *ops)
 {
-	t_node	*holder;
-	int		highest;
-
-	if (!b)
-		return (-1);
-	holder = b->next;
-	highest = b->index;
-	while (holder)
-	{
-		if (holder->index > highest)
-			highest = holder->index;
-		holder = holder->next;
-	}
-	return (highest); 
-}
-
-int	find_position(t_node *b, int highest)
-{
-	t_node	*holder;
-	int		position;
-
-	holder = b;
-	position = 0;
-	while (holder)
-	{
-		if (holder->index == highest)
-			return (position);
-		position++;
-		holder = holder->next;
-	}
-	return (-1);
-}
-
-void	chunk_sorting(t_node **a, t_node **b)
-{
-	int	max;
-	int	pos;
-	int	size;
-	int steps;
-
-	chunk_core_indexer(*a);
-	chunker(a, b);
-	while (*b)
-	{
-		max = find_max_index(*b);
-		pos = find_position(*b, max);
-		size = input_counter(*b);
-		if (pos <= size / 2)
-			while (pos > 0)
-			{
-				rb(b);
-				pos--;
-			}
-		else
-		{
-			steps = size - pos;
-			while (steps > 0)
-			{
-				rrb(b);
-				steps--;
-			}
-		}
-		pa(a, b);
-	}
+    int max;
+    int pos;
+    int size;
+    int steps;
+    chunk_core_indexer(*a);
+    chunker(a, b, ops);
+    while (*b)
+    {
+        max = find_max_index(*b);
+        pos = find_position(*b, max);
+        size = input_counter(*b);
+        if (pos <= size / 2)
+            while (pos > 0)
+            {
+                rb(b, ops);
+                pos--;
+            }
+        else
+        {
+            steps = size - pos;
+            while (steps > 0)
+            {
+                rrb(b, ops);
+                steps--;
+            }
+        }
+        pa(a, b, ops);
+    }
 }

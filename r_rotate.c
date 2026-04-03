@@ -32,21 +32,24 @@ void	r_rotate(t_node **a)
 	*a = last;  
 }
 
-void	rra(t_node **a)
+void	rra(t_node **a, t_ops *ops)
 {
 	r_rotate(a);
 	write(1, "rra\n", 4);
+	ops->rra++;
 }
 
-void	rrb(t_node **b)
+void	rrb(t_node **b, t_ops *ops)
 {
 	r_rotate(b);
 	write(1, "rrb\n", 4);
+	ops->rrb++;
 }
 
-void	rrr(t_node **a, t_node **b)
+void	rrr(t_node **a, t_node **b, t_ops *ops)
 {
 	r_rotate(b);
 	r_rotate(a);
 	write(1, "rrr\n", 4);
+	ops->rrr++;
 }

@@ -21,18 +21,18 @@ void	navigation(t_node **a, int strat, t_ops *ops)
 	disorder = compute_disorder(*a);
 	b = NULL;
 	if (strat == 0)
-		bubble_sorting(a);
+		bubble_sorting(a, ops);
 	else if (strat == 1)
-		chunk_sorting(a, &b);
+		chunk_sorting(a, &b, ops);
 	else if (strat == 2)
-		radix(a, &b);
+		radix(a, &b, ops);
 	else if (strat == 3)
 	{
 		if (disorder < 0.2)
-			bubble_sorting(a);
+			bubble_sorting(a, ops);
 		else if (0.2 <= disorder && disorder < 0.5)
-			chunk_sorting(a, &b);
+			chunk_sorting(a, &b, ops);
 		else if (disorder >= 0.5)
-			radix(a, &b);
+			radix(a, &b, ops);
 	}
 }

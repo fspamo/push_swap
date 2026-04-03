@@ -38,7 +38,7 @@ int count_bits(int max)
     return (bits);
 }
 
-void	radix(t_node **a, t_node **b)
+void	radix(t_node **a, t_node **b, t_ops *ops)
 {
 	int	size;
 	int	highest;	
@@ -56,13 +56,13 @@ void	radix(t_node **a, t_node **b)
 		while (j < size)
 		{
 			if (((*a)->value >> i) & 1)
-				ra(a);
+				ra(a, ops);
 			else
-				pb(a,b);
+				pb(a,b, ops);
 			j++;
 		}
 		while (*b)
-			pa(a, b);
+			pa(a, b, ops);
 		i++;
 	}
 }

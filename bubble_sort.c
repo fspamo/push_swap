@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	bubble_sorting(t_node **a)
+void	bubble_sorting(t_node **a, t_ops *ops)
 {
 	int	size;
 	int	i;
@@ -28,13 +28,13 @@ void	bubble_sorting(t_node **a)
 		while (j < size - 1)
 		{
 			if ((*a)->value > (*a)->next->value)
-				sa(a);
-			ra(a);
+				sa(a, ops);
+			ra(a, ops);
 			j++;
 		}
 		j = 0;
 		while (j++ < size - 1)
-			rra(a);
+			rra(a, ops);
 		i++;
 	}
 }

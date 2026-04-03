@@ -51,5 +51,5 @@ void	rr(t_node **b, t_node **a, t_ops *ops)
 	rotate(b);
 	rotate(a);
 	write(1, "rr\n", 3);
-	ops->rb+2;
+	ops->rr++;
 }

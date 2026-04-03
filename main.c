@@ -94,10 +94,12 @@ int main(int argc, char **argv)
 	int     strat;
 	int     offset;
 	int		bench;
+	t_ops	ops;
 
 	a = NULL;
 	b = NULL;
 	(void)b;
+	ops = (t_ops){0};
 	bench = 0;
 	offset = parse_flags(argc, argv, &strat, &bench);
 	if (argc < 2)
@@ -108,7 +110,7 @@ int main(int argc, char **argv)
 	if (re_arange(argc - offset, argv + offset, &a))
 		return (1);
 	default_controls(a);
-	navigation(&a, strat);
+	navigation(&a, strat, &ops);
 	print_stack(a); // should be removed
 	if (bench == 1)
 		benchmarking(compute_disorder(a));

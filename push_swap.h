@@ -46,19 +46,20 @@ void		*ft_memcpy(void *dest, const void *src, size_t n);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(const char *s);
 
-void		sa(t_node	**a);
-void		sb(t_node	**a);
-void		ss(t_node	**a, t_node **b);
+void		sa(t_node	**a, t_ops *ops);
+void		sb(t_node	**a, t_ops *ops);
+void		ss(t_node	**a, t_node **b, t_ops *ops);
 
-void    	pa(t_node **a, t_node **b);
-void    	pb(t_node **b, t_node **a);
-        	
-void		ra(t_node **a);
-void		rb(t_node **b);
-void		rr(t_node **b, t_node **a);
-void		rra(t_node **a);
-void		rrb(t_node **b);
-void		rrr(t_node **b, t_node **a);
+void    	pa(t_node **a, t_node **b, t_ops *ops);
+void    	pb(t_node **b, t_node **a, t_ops *ops);
+
+void		ra(t_node **a, t_ops *ops);
+void		rb(t_node **b, t_ops *ops);
+void		rr(t_node **b, t_node **a, t_ops *ops);
+
+void		rra(t_node **a, t_ops *ops);
+void		rrb(t_node **b, t_ops *ops);
+void		rrr(t_node **b, t_node **a, t_ops *ops);
         	
 void		add_back(t_node **lst, t_node *next);
 t_node		*new_lst(int value);
