@@ -10,23 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <unistd.h>
-#include <stdlib.h>
 
-void	benchmarking(float disorder, char *strat)
+void	benchmarking(t_ops *ops, int strat, float disorder)
 {
-	// float	disobey;
-	// char 	*strategy;
-	// int		total_strat;
-	write(1, "bench mode" ,10);	
-	// if (argc <= offset
-	// 	print_error();
-	// if (re_arange(argc - offset, argv + offset, &a))
-	// 	return (1);
-	// default_controls(a);
-	// navigation(&a, strat);
-	// print_stack(a);
-	// return (0);
+	
+	write(2,"something",9);
 }
-
-// void	()

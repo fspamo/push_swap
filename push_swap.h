@@ -34,7 +34,7 @@ void		default_controls(t_node *a);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
-void		benchmarking();
+void		benchmarking(t_ops *ops, int strat, float disorder);
 
 void		print_error(void);
 int			is_sorted(t_node *a);
@@ -70,8 +70,7 @@ int     	total_length(int argc, char **argv);
 float		compute_disorder(t_node *a);
 int			ft_sqrt(int n);
 
-void		chunk_core_indexer(t_node *a);
-void		navigation(t_node **a, int strat, t_ops *ops);
+void		navigation(t_node **a, char strat, t_ops *ops);
 void		bubble_sorting(t_node **a, t_ops *ops);
 void		chunk_sorting(t_node **a, t_node **b, t_ops *ops);
 void		radix(t_node **a, t_node **b, t_ops *ops);

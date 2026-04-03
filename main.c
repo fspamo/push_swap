@@ -25,7 +25,7 @@ void	print_stack(t_node *a)
 	}
 }
 
-int	parse_flags(int argc, char **argv, int *strat, int *bench)
+int	parse_flags(int argc, char **argv, char *strat, int *bench)
 {
 	int	offset;
 
@@ -91,7 +91,7 @@ int main(int argc, char **argv)
 {
 	t_node  *a;
 	t_node  *b;
-	int     strat;
+	int		strat;
 	int     offset;
 	int		bench;
 	t_ops	ops;
@@ -104,15 +104,14 @@ int main(int argc, char **argv)
 	offset = parse_flags(argc, argv, &strat, &bench);
 	if (argc < 2)
 		print_error();
-	offset = parse_flags(argc, argv, &strat, &bench);
 	if (argc <= offset)
 		print_error();
 	if (re_arange(argc - offset, argv + offset, &a))
 		return (1);
 	default_controls(a);
 	navigation(&a, strat, &ops);
-	print_stack(a); // should be removed
+	print_stack(a);
 	if (bench == 1)
-		benchmarking(compute_disorder(a));
+		benchmarking(&ops, strat, disorder);
 	return (0);
 }
