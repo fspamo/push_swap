@@ -34,7 +34,7 @@ void		default_controls(t_node *a);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
-void		benchmarking(t_ops *ops, int strat, float disorder);
+void		benchmarking();
 
 void		print_error(void);
 int			is_sorted(t_node *a);
