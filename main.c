@@ -90,18 +90,18 @@ int	strategy_selector(char *strat)
 int main(int argc, char **argv)
 {
 	t_node  *a;
-	t_node  *b;
-	int		strat;
+	char	*strat;
 	int     offset;
 	int		bench;
 	t_ops	ops;
 
 	a = NULL;
-	b = NULL;
-	(void)b;
 	ops = (t_ops){0};
 	bench = 0;
-	offset = parse_flags(argc, argv, &strat, &bench);
+	strat = malloc((ft_strlen(argv[1]) + 1) * sizeof(char));
+	if (!strat)
+		return (1);
+	offset = parse_flags(argc, argv, strat, &bench);
 	if (argc < 2)
 		print_error();
 	if (argc <= offset)
@@ -109,9 +109,9 @@ int main(int argc, char **argv)
 	if (re_arange(argc - offset, argv + offset, &a))
 		return (1);
 	default_controls(a);
-	navigation(&a, strat, &ops);
+	navigation(&a, strategy_selector(strat), &ops);
 	print_stack(a);
 	if (bench == 1)
-		benchmarking(&ops, strat, disorder);
+		benchmarking(&ops, strategy_selector(strat), compute_disorder(a));
 	return (0);
 }

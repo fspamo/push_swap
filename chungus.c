@@ -24,6 +24,41 @@
 // 	}
 // }
 
+int	find_max_index(t_node *b)
+{
+	t_node	*holder;
+	int		highest;
+
+	if (!b)
+		return (-1);
+	holder = b->next;
+	highest = b->index;
+	while (holder)
+	{
+		if (holder->index > highest)
+			highest = holder->index;
+		holder = holder->next;
+	}
+	return (highest); 
+}
+
+int	find_position(t_node *b, int highest)
+{
+	t_node	*holder;
+	int		position;
+
+	holder = b;
+	position = 0;
+	while (holder)
+	{
+		if (holder->index == highest)
+			return (position);
+		position++;
+		holder = holder->next;
+	}
+	return (-1);
+}
+
 void chunker(t_node **a, t_node **b, t_ops *ops)
 {
     int size;

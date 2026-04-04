@@ -13,7 +13,10 @@
 #include "push_swap.h"
 #include <unistd.h>
 
-void	benchmarking()
+void	benchmarking(t_ops *ops, int strat, float disorder)
 {
+	ops->ra++;
+	strat = 1;
+	disorder = 0.2;
 	write(2,"something",9);
 }
