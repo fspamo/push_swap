@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   benching.c                                         :+:      :+:    :+:   */
+/*   benchingen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 17:00:17 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/01 18:08:36 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/05 01:39:54 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <unistd.h>
+#include "ft_printf"
 
-void	benchmarking(t_ops *ops, int strat, float disorder)
+void    benchmarking(t_ops *ops, int strat, float disorder)
 {
-	ops->ra++;
-	strat = 1;
-	disorder = 0.2;
-	write(2,"something",9);
+    ops->ra++;
+    strat++;
+    disorder = disorder + 0.2;
 }
