@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/01 19:13:04 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/06 19:33:14 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,9 @@ void		navigation(t_node **a, int strat, t_ops *ops);
 void		bubble_sorting(t_node **a, t_ops *ops);
 void		chunk_sorting(t_node **a, t_node **b, t_ops *ops);
 void		radix(t_node **a, t_node **b, t_ops *ops);
+
+void		put_nbr_fd(int n, int fd);
+void		put_float(float n, int fd);
+char		*strat_name(int strat);
 
 #endif

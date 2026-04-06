@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/31 14:10:38 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/07 01:13:28 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -25,20 +25,20 @@ void	print_stack(t_node *a)
 	}
 }
 
-int	parse_flags(int argc, char **argv, char *strat, int *bench)
+int	parse_flags(int argc, char **argv, int *strat, int *bench)
 {
-	int	offset;
+    int	offset;
 
-	offset = 1;
-	while (offset < argc && argv[offset][0] == '-' && argv[offset][1] == '-')
-	{
-		if (ft_strcmp(argv[offset], "--bench") == 0)
-			*bench = 1;
-		else
-			*strat = strategy_selector(argv[offset]);
-		offset++;
-	}
-	return (offset);
+    offset = 1;
+    while (offset < argc && argv[offset][0] == '-' && argv[offset][1] == '-')
+    {
+        if (ft_strcmp(argv[offset], "--bench") == 0)
+            *bench = 1;
+        else
+            *strat = strategy_selector(argv[offset]);
+        offset++;
+    }
+    return (offset);
 }
 
 int	re_arange(int argc, char **argv, t_node **a)
@@ -89,29 +89,29 @@ int	strategy_selector(char *strat)
 
 int main(int argc, char **argv)
 {
-	t_node  *a;
-	char	*strat;
-	int     offset;
-	int		bench;
-	t_ops	ops;
+    t_node  *a;
+    int     strat;
+    int     offset;
+    int     bench;
+    t_ops   ops;
+    float   disorder;
 
-	a = NULL;
-	ops = (t_ops){0};
-	bench = 0;
-	strat = malloc((ft_strlen(argv[1]) + 1) * sizeof(char));
-	if (!strat)
-		return (1);
-	offset = parse_flags(argc, argv, strat, &bench);
-	if (argc < 2)
-		print_error();
-	if (argc <= offset)
-		print_error();
-	if (re_arange(argc - offset, argv + offset, &a))
-		return (1);
-	default_controls(a);
-	navigation(&a, strategy_selector(strat), &ops);
+    a = NULL;
+    ops = (t_ops){0};
+    bench = 0;
+    strat = 3;
+    if (argc < 2)
+        return (0);
+    offset = parse_flags(argc, argv, &strat, &bench);
+    if (argc <= offset)
+        print_error();
+    if (re_arange(argc - offset, argv + offset, &a))
+        return (1);
+    default_controls(a);
+    disorder = compute_disorder(a);
+    navigation(&a, strat, &ops);
 	print_stack(a);
-	if (bench == 1)
-		benchmarking(&ops, strategy_selector(strat), compute_disorder(a));
-	return (0);
+    if (bench == 1)
+        benchmarking(&ops, strat, disorder);
+    return (0);
 }
