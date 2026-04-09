@@ -6,17 +6,26 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 00:26:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/29 15:52:40 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/09 15:37:34 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-void	default_controls(t_node *a)
+void	default_controls(t_node *a, t_ops *ops, int bench)
 {
+	float	disholder;
+
+	disholder = compute_disorder(a);
 	is_sorted(a);
 	is_duped(a);
+	if (five_or_less_control(a, ops) == 1)
+	{
+		if (bench == 1)
+			benchmarking(ops, 0, disholder);
+		exit (1);
+	}
 }
 
 void	is_duped(t_node *a)
@@ -41,7 +50,7 @@ void	is_duped(t_node *a)
 int	is_sorted(t_node *a)
 {
 	t_node *temp;
-	
+
 	temp = a;
 	while (temp && temp->next)
 	{
@@ -68,4 +77,33 @@ int	is_valid_number(char *str)
 		i++;
 	}
 	return (1);
+}
+
+int	five_or_less_control(t_node *a, t_ops *ops)
+{
+	t_node	*b;
+	if (input_counter(a) <= 5)
+	{
+		if (input_counter(a) == 2)
+		{
+			two_numbers(a, ops);
+			return (1);
+		}
+		else if (input_counter(a) == 3)
+		{
+			three_numbers(&a, ops);
+			return (1);
+		}
+		else if (input_counter(a) == 4)
+		{
+			four_numbers(&a, &b, ops);
+			return (1);
+		}
+		else if (input_counter(a) == 5)
+		{
+			five_numbers(&a, &b, ops);
+			return (1);
+		}
+	}
+	return (0);
 }
