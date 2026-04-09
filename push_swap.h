@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 13:39:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/06 19:33:14 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/09 02:51:55 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_ops
     int rra; int rrb; int rrr;
 } t_ops;
 
-void		default_controls(t_node *a);
+void		default_controls(t_node *a, t_ops *ops, int bench);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
@@ -80,5 +80,12 @@ void		radix(t_node **a, t_node **b, t_ops *ops);
 void		put_nbr_fd(int n, int fd);
 void		put_float(float n, int fd);
 char		*strat_name(int strat);
+
+
+int			five_or_less_control(t_node *a, t_ops *ops);
+void		two_numbers(t_node *a, t_ops *ops);
+void		three_numbers(t_node **a, t_ops *ops);
+void		four_numbers(t_node **a, t_node **b, t_ops *ops);
+void		five_numbers(t_node **a, t_node **b, t_ops *ops);
 
 #endif
