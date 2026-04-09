@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/07 01:13:28 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/09 02:49:59 by cbozkurt         ###   ########.fr       */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
         print_error();
     if (re_arange(argc - offset, argv + offset, &a))
         return (1);
-    default_controls(a);
+    default_controls(a, &ops, bench);
     disorder = compute_disorder(a);
     navigation(&a, strat, &ops);
 	print_stack(a);
