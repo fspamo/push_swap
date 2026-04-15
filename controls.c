@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 00:26:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/09 15:37:34 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 00:17:42 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	is_duped(t_node *a)
 
 int	is_sorted(t_node *a)
 {
-	t_node *temp;
+	t_node	*temp;
 
 	temp = a;
 	while (temp && temp->next)
@@ -81,29 +81,20 @@ int	is_valid_number(char *str)
 
 int	five_or_less_control(t_node *a, t_ops *ops)
 {
+	int		size;
 	t_node	*b;
-	if (input_counter(a) <= 5)
-	{
-		if (input_counter(a) == 2)
-		{
-			two_numbers(a, ops);
-			return (1);
-		}
-		else if (input_counter(a) == 3)
-		{
-			three_numbers(&a, ops);
-			return (1);
-		}
-		else if (input_counter(a) == 4)
-		{
-			four_numbers(&a, &b, ops);
-			return (1);
-		}
-		else if (input_counter(a) == 5)
-		{
-			five_numbers(&a, &b, ops);
-			return (1);
-		}
-	}
-	return (0);
+
+	size = input_counter(a);
+	b = NULL;
+	if (size == 2)
+		two_numbers(a, ops);
+	else if (size == 3)
+		three_numbers(&a, ops);
+	else if (size == 4)
+		four_numbers(&a, &b, ops);
+	else if (size == 5)
+		five_numbers(&a, &b, ops);
+	else
+		return (0);
+	return (1);
 }

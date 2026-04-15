@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 02:18:43 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 15:23:15 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 00:19:47 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	chunk_index(t_node *a, int *array, int size)
 			if (array[i] == holder->value)
 			{
 				holder->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -81,7 +81,7 @@ void	chunk_index(t_node *a, int *array, int size)
 
 void	chunk_core_indexer(t_node *a)
 {
-	int *array;
+	int	*array;
 	int	size;
 
 	size = input_counter(a);

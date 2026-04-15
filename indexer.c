@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 02:18:43 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 14:52:46 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 00:10:39 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	index_numbers(t_node *a, int *array, int size)
 			if (array[i] == holder->value)
 			{
 				holder->value = i;
-				break;
+				break ;
 			}
 			i++;
 		}
@@ -81,7 +81,7 @@ void	index_numbers(t_node *a, int *array, int size)
 
 void	core_indexer(t_node *a)
 {
-	int *array;
+	int	*array;
 	int	size;
 
 	size = input_counter(a);

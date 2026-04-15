@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 14:37:25 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/22 14:52:29 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 00:20:52 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int	find_max(t_node *a)
 	return (highest);
 }
 
-int count_bits(int max)
+int	count_bits(int max)
 {
-    int bits;
+	int	bits;
 
-    bits = 0;
-    while ((1 << bits) <= max)
-        bits++;
-    return (bits);
+	bits = 0;
+	while ((1 << bits) <= max)
+		bits++;
+	return (bits);
 }
 
 void	radix(t_node **a, t_node **b, t_ops *ops)
@@ -58,7 +58,7 @@ void	radix(t_node **a, t_node **b, t_ops *ops)
 			if (((*a)->value >> i) & 1)
 				ra(a, ops);
 			else
-				pb(a,b, ops);
+				pb(a, b, ops);
 			j++;
 		}
 		while (*b)
