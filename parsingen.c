@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 01:57:56 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 16:50:24 by melipola         ###   ########.fr       */
+/*   Updated: 2026/04/16 19:21:50 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	total_length(int argc, char **argv)
 	int	i;
 	int	len;
 
-	i = 1;
+	i = 0;
 	len = 0;
 	while (i < argc)
 	{
