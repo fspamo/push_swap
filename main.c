@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/09 02:49:59 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:16:53 by melipola         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
@@ -27,25 +28,32 @@ void	print_stack(t_node *a)
 
 int	parse_flags(int argc, char **argv, int *strat, int *bench)
 {
-    int	offset;
+	int	offset;
 
-    offset = 1;
-    while (offset < argc && argv[offset][0] == '-' && argv[offset][1] == '-')
-    {
-        if (ft_strcmp(argv[offset], "--bench") == 0)
-            *bench = 1;
-        else
-            *strat = strategy_selector(argv[offset]);
-        offset++;
-    }
-    return (offset);
+	offset = 1;
+	while (offset < argc && argv[offset][0] == '-' && argv[offset][1] == '-')
+	{
+		if (ft_strcmp(argv[offset], "--bench") == 0)
+			*bench = 1;
+		else
+			*strat = strategy_selector(argv[offset]);
+		offset++;
+	}
+	return (offset);
+}
+
+static void	free_numbers(char **numbers, int i)
+{
+	while (numbers[i])
+		free(numbers[i++]);
+	free(numbers);
 }
 
 int	re_arange(int argc, char **argv, t_node **a)
 {
-	char    *joined;
-	char    **numbers;
-	int     i;
+	char	**numbers;
+	char	*joined;
+	int		i;
 
 	joined = join_args(argc, argv);
 	if (!joined)
@@ -58,16 +66,9 @@ int	re_arange(int argc, char **argv, t_node **a)
 	while (numbers[i])
 	{
 		if (!is_valid_number(numbers[i]))
-		{
-			while (numbers[i])
-				free(numbers[i++]);
-			free(numbers);
-			print_error();
-		}
-		int value = ft_so_long_atoi(numbers[i]);
-		add_back(a, new_lst(value));
-		free(numbers[i]);
-		i++;
+			return (free_numbers(numbers, i), print_error(), 1);
+		add_back(a, new_lst(ft_so_long_atoi(numbers[i])));
+		free(numbers[i++]);
 	}
 	free(numbers);
 	return (0);
@@ -87,31 +88,31 @@ int	strategy_selector(char *strat)
 		return (3);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    t_node  *a;
-    int     strat;
-    int     offset;
-    int     bench;
-    t_ops   ops;
-    float   disorder;
+	t_node	*a;
+	int		strat;
+	int		offset;
+	int		bench;
+	t_ops	ops;
+	float	disorder;
 
-    a = NULL;
-    ops = (t_ops){0};
-    bench = 0;
-    strat = 3;
-    if (argc < 2)
-        return (0);
-    offset = parse_flags(argc, argv, &strat, &bench);
-    if (argc <= offset)
-        print_error();
-    if (re_arange(argc - offset, argv + offset, &a))
-        return (1);
-    default_controls(a, &ops, bench);
-    disorder = compute_disorder(a);
-    navigation(&a, strat, &ops);
+	a = NULL;
+	ops = (t_ops){0};
+	bench = 0;
+	strat = 3;
+	if (argc < 2)
+		return (0);
+	offset = parse_flags(argc, argv, &strat, &bench);
+	if (argc <= offset)
+		print_error();
+	if (re_arange(argc - offset, argv + offset, &a))
+		return (1);
+	default_controls(a, &ops, bench);
+	disorder = compute_disorder(a);
+	navigation(&a, strat, &ops);
 	print_stack(a);
-    if (bench == 1)
-        benchmarking(&ops, strat, disorder);
-    return (0);
+	if (bench == 1)
+		benchmarking(&ops, strat, disorder);
+	return (0);
 }
