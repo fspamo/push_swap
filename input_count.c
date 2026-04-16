@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_count.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/28 20:46:24 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 22:49:08 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:17:05 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	input_counter(t_node *a)
 {
 	t_node	*holder;
-	int	count;
+	int		count;
 
 	holder = a;
 	count = 0;

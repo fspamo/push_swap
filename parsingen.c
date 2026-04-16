@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   parsingen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/27 01:57:56 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/31 14:09:25 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:50:24 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "push_swap.h"
 
-int  total_length(int argc, char **argv)
+int	total_length(int argc, char **argv)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	i = 1;
 	len = 0;
@@ -24,18 +24,18 @@ int  total_length(int argc, char **argv)
 	{
 		len += ft_strlen(argv[i]);
 		if (i < argc - 1)
-			len += 1; 
+			len += 1;
 		i++;
 	}
 	return (len);
 }
 
-char *join_args(int argc, char **argv)
+char	*join_args(int argc, char **argv)
 {
-	char    *joined;
-	int     i;
-	int     j;
-	int     k;
+	char	*joined;
+	int		i;
+	int		j;
+	int		k;
 
 	joined = malloc(sizeof(char) * (total_length(argc, argv) + 1));
 	if (!joined)
@@ -47,7 +47,6 @@ char *join_args(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 			joined[k++] = argv[i][j++];
-
 		if (i < argc - 1)
 			joined[k++] = ' ';
 		i++;

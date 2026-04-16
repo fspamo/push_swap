@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   r_rotate.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 23:50:39 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/07 23:07:20 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:52:22 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	r_rotate(t_node **a)
 	t_node	*last;
 
 	if (!a || !*a || !(*a)->next)
-		return;
+		return ;
 	prev = NULL;
 	last = *a;
 	while (last->next)
@@ -29,7 +29,7 @@ void	r_rotate(t_node **a)
 	}
 	prev->next = NULL;
 	last->next = *a;
-	*a = last;  
+	*a = last;
 }
 
 void	rra(t_node **a, t_ops *ops)

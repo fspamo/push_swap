@@ -3,28 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 20:46:47 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/02 22:01:34 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:54:04 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void    swap(t_node **stack)
+void	swap(t_node **stack)
 {
-    t_node  *first;
-    t_node  *second;
+	t_node	*first;
+	t_node	*second;
 
-    if (!stack || !*stack || !(*stack)->next)
-        return ;
-    first = *stack;
-    second = first->next;
-    first->next = second->next;
-    second->next = first;
-    *stack = second;
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	first = *stack;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	*stack = second;
 }
 
 void	sa(t_node **a, t_ops *ops)
@@ -33,12 +33,14 @@ void	sa(t_node **a, t_ops *ops)
 	write(1, "sa\n", 3);
 	ops->sa++;
 }
+
 void	sb(t_node **b, t_ops *ops)
 {
 	swap(b);
 	write(1, "sb\n", 3);
 	ops->sb++;
 }
+
 void	ss(t_node **a, t_node **b, t_ops *ops)
 {
 	swap(a);

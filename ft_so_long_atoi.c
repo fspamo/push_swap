@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_so_long_atoi.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 01:42:06 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/02/28 19:10:22 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:16:11 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ long int	ft_so_long_atoi(const char *nptr)
 	final = 0;
 	sign = 1;
 	while (((nptr[i] == ' ') || (nptr[i] >= 9 && nptr[i] <= 13))
-			&& (nptr[i] != '\0'))
+		&& (nptr[i] != '\0'))
 		i++;
 	if (nptr[i] == '-' || nptr[i] == '+')
 		if (nptr[i++] == '-')

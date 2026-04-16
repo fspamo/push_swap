@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bubble_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
+/*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 20:53:06 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/03/16 16:35:02 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/16 16:15:47 by melipola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	bubble_sorting(t_node **a, t_ops *ops)
 	int	j;
 
 	if (!a || !*a)
-		return;
+		return ;
 	size = input_counter(*a);
 	i = 0;
 	while (i < size)
