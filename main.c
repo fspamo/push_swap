@@ -95,7 +95,6 @@ int	main(int argc, char **argv)
 	int		offset;
 	int		bench;
 	t_ops	ops;
-	float	disorder;
 
 	a = NULL;
 	ops = (t_ops){0};
@@ -109,10 +108,9 @@ int	main(int argc, char **argv)
 	if (re_arange(argc - offset, argv + offset, &a))
 		return (1);
 	default_controls(a, &ops, bench);
-	disorder = compute_disorder(a);
 	navigation(&a, strat, &ops);
 	print_stack(a);
 	if (bench == 1)
-		benchmarking(&ops, strat, disorder);
+		benchmarking(&ops, strat, compute_disorder(a));
 	return (0);
 }
