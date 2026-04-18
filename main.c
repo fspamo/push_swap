@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 17:16:53 by melipola         ###   ########.fr       */
+/*   Updated: 2026/04/18 18:40:34 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,26 +91,24 @@ int	strategy_selector(char *strat)
 int	main(int argc, char **argv)
 {
 	t_node	*a;
-	int		strat;
-	int		offset;
-	int		bench;
 	t_ops	ops;
+	t_vars	v;
 
 	a = NULL;
 	ops = (t_ops){0};
-	bench = 0;
-	strat = 3;
+	v = (t_vars){.bench = 0, .strat = 3, .offset = 0, .disorder = 0};
 	if (argc < 2)
 		return (0);
-	offset = parse_flags(argc, argv, &strat, &bench);
-	if (argc <= offset)
+	v.offset = parse_flags(argc, argv, &v.strat, &v.bench);
+	if (argc <= v.offset)
 		print_error();
-	if (re_arange(argc - offset, argv + offset, &a))
+	if (re_arange(argc - v.offset, argv + v.offset, &a))
 		return (1);
-	default_controls(a, &ops, bench);
-	navigation(&a, strat, &ops);
+	v.disorder = compute_disorder(a);
+	default_controls(a, &ops, v.bench);
+	navigation(&a, v.strat, &ops);
 	print_stack(a);
-	if (bench == 1)
-		benchmarking(&ops, strat, compute_disorder(a));
+	if (v.bench == 1)
+		benchmarking(&ops, v.strat, v.disorder);
 	return (0);
 }
