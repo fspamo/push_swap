@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:01:56 by melipola          #+#    #+#             */
-/*   Updated: 2026/04/16 17:02:00 by melipola         ###   ########.fr       */
+/*   Updated: 2026/04/18 16:53:26 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,14 @@
 # define PUSH_SWAP_H
 
 # include <stddef.h>
+
+typedef struct hard_stuck
+{
+	float	disorder;
+	int		strat;
+	int		bench;
+	int		offset;
+}	t_vars;
 
 typedef struct s_node
 {
