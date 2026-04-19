@@ -5,27 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/08 14:37:25 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:20:52 by cbozkurt         ###   ########.fr       */
+/*   Created: 2026/04/19 16:30:53 by cbozkurt          #+#    #+#             */
+/*   Updated: 2026/04/19 16:31:04 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max(t_node *a)
+void	normalize(t_node *a)
 {
-	int		highest;
-	t_node	*holder;
+	t_node	*i;
+	t_node	*j;
+	int		rank;
 
-	holder = a;
-	highest = holder->value;
-	while (holder)
+	i = a;
+	while (i)
 	{
-		if (highest < holder->value)
-			highest = holder->value;
-		holder = holder->next;
+		rank = 0;
+		j = a;
+		while (j)
+		{
+			if (j->value < i->value)
+				rank++;
+			j = j->next;
+		}
+		i->index = rank;
+		i = i->next;
 	}
-	return (highest);
 }
 
 int	count_bits(int max)
@@ -38,31 +44,33 @@ int	count_bits(int max)
 	return (bits);
 }
 
-void	radix(t_node **a, t_node **b, t_ops *ops)
+void	radix_pass(t_node **a, t_node **b, t_ops *ops, int bit)
 {
-	int	size;
-	int	highest;	
-	int	max_bits;
-	int	i;
 	int	j;
+	int	size;
 
 	size = input_counter(*a);
-	highest = find_max(*a);
-	max_bits = count_bits(highest);
+	j = 0;
+	while (j < size)
+	{
+		if (((*a)->index >> bit) & 1)
+			ra(a, ops);
+		else
+			pb(a, b, ops);
+		j++;
+	}
+	while (*b)
+		pa(a, b, ops);
+}
+
+void	radix(t_node **a, t_node **b, t_ops *ops)
+{
+	int	max_bits;
+	int	i;
+
+	normalize(*a);
+	max_bits = count_bits(input_counter(*a) - 1);
 	i = 0;
 	while (i < max_bits)
-	{
-		j = 0;
-		while (j < size)
-		{
-			if (((*a)->value >> i) & 1)
-				ra(a, ops);
-			else
-				pb(a, b, ops);
-			j++;
-		}
-		while (*b)
-			pa(a, b, ops);
-		i++;
-	}
+		radix_pass(a, b, ops, i++);
 }
