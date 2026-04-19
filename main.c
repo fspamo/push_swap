@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/18 18:40:34 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/19 22:59:55 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,15 @@ int	strategy_selector(char *strat)
 		return (3);
 }
 
-char	*adp_printer(t_node *a)
+char	*adp_printer(float disorder)
 {
-	t_vars	v;
 	char	*metric;
 
-	v.disorder = compute_disorder(a);
-	if (v.disorder < 0.2)
+	if (disorder < 0.2)
 		metric = ft_strdup("Adaptive / O(n²)");
-	else if (0.2 <= v.disorder && v.disorder < 0.5)
+	else if (0.2 <= disorder && disorder < 0.5)
 		metric = ft_strdup("Adaptive / O(n√n)");
-	else if (v.disorder >= 0.5)
+	else if (disorder >= 0.5)
 		metric = ft_strdup("Adaptive / O(n log n)");
 	return (metric);
 }
