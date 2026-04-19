@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:01:56 by melipola          #+#    #+#             */
-/*   Updated: 2026/04/19 16:32:44 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/19 22:59:12 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void		default_controls(t_node *a, t_ops *ops, int bench);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
-void		benchmarking(t_ops *ops, int strat, float disorder, t_node *a);
+void		benchmarking(t_ops *ops, int strat, float disorder);
 
 void		print_error(void);
-char		*adp_printer(t_node *a);
+char		*adp_printer(float disorder);
 int			is_sorted(t_node *a);
 void		is_duped(t_node *a);
 
@@ -96,7 +96,7 @@ void		radix(t_node **a, t_node **b, t_ops *ops);
 
 void		put_nbr_fd(int n, int fd);
 void		put_float(float n, int fd);
-char		*strat_name(int strat, t_node *a);
+char		*strat_name(int strat, float disorder);
 
 int			five_or_less_control(t_node *a, t_ops *ops);
 void		two_numbers(t_node *a, t_ops *ops);
