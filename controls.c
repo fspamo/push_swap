@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 00:26:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/18 18:42:34 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/19 23:31:49 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@ void	default_controls(t_node *a, t_ops *ops, int bench)
 	float	disholder;
 
 	disholder = compute_disorder(a);
-	is_sorted(a);
+	if (bench == 0)
+		is_sorted(a);
 	is_duped(a);
 	if (five_or_less_control(a, ops) == 1)
 	{
 		if (bench == 1)
-			benchmarking(ops, 0, disholder, a);
+			benchmarking(ops, 0, disholder);
 		exit (1);
 	}
 }
