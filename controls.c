@@ -23,7 +23,7 @@ void	default_controls(t_node *a, t_ops *ops, int bench)
 	if (five_or_less_control(a, ops) == 1)
 	{
 		if (bench == 1)
-			benchmarking(ops, 0, disholder);
+			benchmarking(ops, 0, disholder, a);
 		exit (1);
 	}
 }

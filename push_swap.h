@@ -49,9 +49,10 @@ void		default_controls(t_node *a, t_ops *ops, int bench);
 int			input_counter(t_node *a);
 int			is_valid_number(char *str);
 int			strategy_selector(char *strat);
-void		benchmarking(t_ops *ops, int strat, float disorder);
+void		benchmarking(t_ops *ops, int strat, float disorder, t_node *a);
 
 void		print_error(void);
+char		*adp_printer(t_node *a);
 int			is_sorted(t_node *a);
 void		is_duped(t_node *a);
 
@@ -95,7 +96,7 @@ void		radix(t_node **a, t_node **b, t_ops *ops);
 
 void		put_nbr_fd(int n, int fd);
 void		put_float(float n, int fd);
-char		*strat_name(int strat);
+char		*strat_name(int strat, t_node *a);
 
 int			five_or_less_control(t_node *a, t_ops *ops);
 void		two_numbers(t_node *a, t_ops *ops);

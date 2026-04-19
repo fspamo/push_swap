@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 #include <unistd.h>
 
 void	put_nbr_fd(int n, int fd)
@@ -42,7 +43,7 @@ void	put_float(float n, int fd)
 	put_nbr_fd(dec_part, fd);
 }
 
-char	*strat_name(int strat)
+char	*strat_name(int strat, t_node *a)
 {
 	if (strat == 0)
 		return ("Simple / O(n^2)");
@@ -50,5 +51,5 @@ char	*strat_name(int strat)
 		return ("Medium / O(n*sqrt(n))");
 	else if (strat == 2)
 		return ("Complex / O(n log n)");
-	return ("Adaptive");
+	return (adp_printer(a));
 }

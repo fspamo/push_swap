@@ -88,6 +88,21 @@ int	strategy_selector(char *strat)
 		return (3);
 }
 
+char	*adp_printer(t_node *a)
+{
+	t_vars	v;
+	char	*metric;
+
+	v.disorder = compute_disorder(a);
+	if (v.disorder < 0.2)
+		metric = ft_strdup("Adaptive / O(n²)");
+	else if (0.2 <= v.disorder && v.disorder < 0.5)
+		metric = ft_strdup("Adaptive / O(n√n)");
+	else if (v.disorder >= 0.5)
+		metric = ft_strdup("Adaptive / O(n log n)");
+	return (metric);
+}
+
 int	main(int argc, char **argv)
 {
 	t_node	*a;
