@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/06 19:31:11 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/07 00:26:46 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/19 23:28:40 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	put_float(float n, int fd)
 	put_nbr_fd(dec_part, fd);
 }
 
-char	*strat_name(int strat, t_node *a)
+char	*strat_name(int strat, float disorder)
 {
 	if (strat == 0)
 		return ("Simple / O(n^2)");
@@ -51,5 +51,5 @@ char	*strat_name(int strat, t_node *a)
 		return ("Medium / O(n*sqrt(n))");
 	else if (strat == 2)
 		return ("Complex / O(n log n)");
-	return (adp_printer(a));
+	return (adp_printer(disorder));
 }
