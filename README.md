@@ -157,15 +157,14 @@ For inputs of 5 or fewer elements, a dedicated hardcoded solver is used regardle
 
 ## Resources
 
-- [Sorting algorithm visualizer](https://visualgo.net/en/sorting) — helpful for understanding algorithm behavior visually
+- [Geeks4Geeks](https://www.geeksforgeeks.org) — helpful for understanding algorithm behavior visually
 - [Push_swap visualizer](https://github.com/o-reo/push_swap_visualizer) — visualizes your push_swap output in real time
 - [Radix sort explained](https://en.wikipedia.org/wiki/Radix_sort)
 - [Big-O cheat sheet](https://www.bigocheatsheet.com/)
-- Knuth, D. E. — *The Art of Computer Programming, Vol. 3: Sorting and Searching*
 
 ### AI Usage
 
-Claude (Anthropic) was used during this project for the following tasks:
+AI was used during this project for the following tasks:
 - Explaining algorithmic concepts (radix sort bit manipulation, chunk partitioning strategy)
 - Time saving, automation work for finding specific cases (for finding which function should be Static or non-static etc.)
 - Drafting and refining this README
