@@ -16,6 +16,7 @@ char	*adp_printer(float disorder)
 {
 	char	*metric;
 
+	metric = NULL;
 	if (disorder < 0.2)
 		metric = ft_strdup("Adaptive / O(n²)");
 	else if (0.2 <= disorder && disorder < 0.5)
