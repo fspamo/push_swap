@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 17:00:17 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/19 22:59:01 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:07:54 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,8 @@ void	benchmarking(t_ops *ops, int strat, float disorder)
 		+ ops->ra + ops->rb + ops->rr + ops->rra + ops->rrb + ops->rrr;
 	print_disorder(disorder);
 	write(2, "[bench] strategy: ", 18);
-	write(2, strat_name(strat,  disorder), ft_strlen(strat_name(strat, disorder)));
+	write(2, strat_name(strat, disorder),
+		ft_strlen(strat_name(strat, disorder)));
 	write(2, "\n", 1);
 	write(2, "[bench] total_ops: ", 19);
 	put_nbr_fd(total, 2);

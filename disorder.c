@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 14:20:13 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/19 22:25:22 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:08:57 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ float	compute_disorder(t_node *a)
 	j = 0;
 	for_mistakes = a;
 	if (!for_mistakes || !for_mistakes->next)
-        return (0);
+		return (0);
 	while (for_mistakes->next)
 	{
 		if (for_mistakes->value > for_mistakes->next->value)
