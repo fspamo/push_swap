@@ -6,14 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 02:18:43 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:19:47 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:21:29 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int	*chunk_copy_array(t_node *a, int size)
+static int	*chunk_copy_array(t_node *a, int size)
 {
 	int		i;
 	int		*array;
@@ -33,7 +33,7 @@ int	*chunk_copy_array(t_node *a, int size)
 	return (array);
 }
 
-void	chunk_sort_arr(int *array, int size)
+static void	chunk_sort_arr(int *array, int size)
 {
 	int	temp;
 	int	i;
@@ -57,7 +57,7 @@ void	chunk_sort_arr(int *array, int size)
 	}
 }
 
-void	chunk_index(t_node *a, int *array, int size)
+static void	chunk_index(t_node *a, int *array, int size)
 {
 	t_node	*holder;
 	int		i;
