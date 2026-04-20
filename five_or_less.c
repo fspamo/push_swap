@@ -6,13 +6,13 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 02:11:04 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/09 02:20:30 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:23:48 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_min_to_b(t_node **a, t_node **b, t_ops *ops)
+static void	push_min_to_b(t_node **a, t_node **b, t_ops *ops)
 {
 	t_node	*temp;
 	int		min;
