@@ -121,10 +121,6 @@ Elements are first **indexed** (ranked 0 to n-1). The stack is then divided into
 
 Elements are indexed (0 to n-1) and sorted bit by bit, from least significant to most significant. For each bit position, every element is examined: if the current bit is `0`, it goes to `b` via `pb`; if `1`, it stays in `a` via `ra`. After each pass, all elements from `b` are pushed back to `a`. After `log₂(n)` passes, the stack is sorted.
 
-**Space complexity:** O(1) auxiliary (no arrays — only the two stacks are used).
-
-**Used when:** `--complex` flag or adaptive with disorder `≥ 0.5`.
-
 ### 4. Adaptive — Auto-select
 
 Computes the disorder before any move, then delegates to one of the three strategies above:
