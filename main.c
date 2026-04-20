@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/20 13:18:06 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:09:03 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int	parse_flags(int argc, char **argv, int *strat, int *bench)
 	return (offset);
 }
 
-static void	free_numbers(char **numbers, int i)
+void	free_numbers(char **numbers, int i)
 {
 	while (numbers[i])
 		free(numbers[i++]);
@@ -66,7 +66,7 @@ static int	re_arange(int argc, char **argv, t_node **a)
 	while (numbers[i])
 	{
 		if (!is_valid_number(numbers[i]))
-			return (free_numbers(numbers, i), print_error(), 1);
+			blessing_souls(a, numbers, i);
 		add_back(a, new_lst(ft_so_long_atoi(numbers[i])));
 		free(numbers[i++]);
 	}
@@ -110,5 +110,6 @@ int	main(int argc, char **argv)
 	print_stack(a);
 	if (v.bench == 1)
 		benchmarking(&ops, v.strat, v.disorder);
+	free_list(&a);
 	return (0);
 }
