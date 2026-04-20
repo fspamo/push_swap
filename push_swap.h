@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:01:56 by melipola          #+#    #+#             */
-/*   Updated: 2026/04/20 13:11:24 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:03:03 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void		rrr(t_node **a, t_node **b, t_ops *ops);
 
 void		add_back(t_node **lst, t_node *new_node);
 t_node		*new_lst(int value);
+void		free_list(t_node **lst);
 
 char		*join_args(int argc, char **argv);
 int			total_length(int argc, char **argv);
@@ -102,5 +103,8 @@ void		two_numbers(t_node *a, t_ops *ops);
 void		three_numbers(t_node **a, t_ops *ops);
 void		four_numbers(t_node **a, t_node **b, t_ops *ops);
 void		five_numbers(t_node **a, t_node **b, t_ops *ops);
+
+void		free_numbers(char **numbers, int i);
+void		blessing_souls(t_node **a, char **numbers, int i);
 
 #endif
