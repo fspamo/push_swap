@@ -167,7 +167,7 @@ For inputs of 5 or fewer elements, a dedicated hardcoded solver is used regardle
 
 Claude (Anthropic) was used during this project for the following tasks:
 - Explaining algorithmic concepts (radix sort bit manipulation, chunk partitioning strategy)
-- Reviewing edge cases in input validation logic
+- Time saving, automation work for finding specific cases (for finding which function should be Static or non-static etc.)
 - Drafting and refining this README
 
 All AI-generated suggestions were reviewed, understood, and either adopted, modified, or rejected by both team members before inclusion in the project.
