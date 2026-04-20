@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	navigation(t_node **a, int strat, t_ops *ops)
 {

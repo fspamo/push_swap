@@ -13,18 +13,6 @@
 #include "push_swap.h"
 #include <stdlib.h>
 #include <unistd.h>
-#include <stdio.h>
-
-void	print_stack(t_node *a)
-{
-	printf("A stack:\n");
-	t_node	*to_print = a;
-	while (to_print)
-	{
-		printf("value: %d\n", to_print->value);
-		to_print = to_print->next;
-	}
-}
 
 static int	parse_flags(int argc, char **argv, int *strat, int *bench)
 {
@@ -107,7 +95,6 @@ int	main(int argc, char **argv)
 	v.disorder = compute_disorder(a);
 	default_controls(a, &ops, v.bench);
 	navigation(&a, v.strat, &ops);
-	print_stack(a);
 	if (v.bench == 1)
 		benchmarking(&ops, v.strat, v.disorder);
 	free_list(&a);
