@@ -6,14 +6,14 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 23:50:39 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 16:52:22 by melipola         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:17:14 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void	r_rotate(t_node **a)
+static void	r_rotate(t_node **a)
 {
 	t_node	*prev;
 	t_node	*last;

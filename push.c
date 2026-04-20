@@ -6,14 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 01:45:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:12:56 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:17:40 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h> 
 
-void	push(t_node **src, t_node **dest)
+static void	push(t_node **src, t_node **dest)
 {
 	t_node	*temp;
 

@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/20 13:09:41 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:18:06 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	print_stack(t_node *a)
 	}
 }
 
-int	parse_flags(int argc, char **argv, int *strat, int *bench)
+static int	parse_flags(int argc, char **argv, int *strat, int *bench)
 {
 	int	offset;
 
@@ -49,7 +49,7 @@ static void	free_numbers(char **numbers, int i)
 	free(numbers);
 }
 
-int	re_arange(int argc, char **argv, t_node **a)
+static int	re_arange(int argc, char **argv, t_node **a)
 {
 	char	**numbers;
 	char	*joined;

@@ -6,14 +6,14 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 20:46:47 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 16:54:04 by melipola         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:16:02 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void	swap(t_node **stack)
+static void	swap(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;

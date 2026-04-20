@@ -6,14 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:15:04 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:22:14 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:16:58 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
 
-void	rotate(t_node **a)
+static void	rotate(t_node **a)
 {
 	t_node	*first;
 	t_node	*last;
