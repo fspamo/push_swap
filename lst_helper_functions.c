@@ -6,12 +6,24 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/23 23:15:30 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:19:10 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 15:44:14 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
+
+void	free_list(t_node **lst)
+{
+	t_node	*temp;
+
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		free(*lst);
+		*lst = temp;
+	}
+}
 
 t_node	*new_lst(int value)
 {
