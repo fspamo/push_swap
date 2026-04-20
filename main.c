@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 14:02:33 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/19 22:59:55 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:04:01 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,19 +86,6 @@ int	strategy_selector(char *strat)
 		return (3);
 	else
 		return (3);
-}
-
-char	*adp_printer(float disorder)
-{
-	char	*metric;
-
-	if (disorder < 0.2)
-		metric = ft_strdup("Adaptive / O(n²)");
-	else if (0.2 <= disorder && disorder < 0.5)
-		metric = ft_strdup("Adaptive / O(n√n)");
-	else if (disorder >= 0.5)
-		metric = ft_strdup("Adaptive / O(n log n)");
-	return (metric);
 }
 
 int	main(int argc, char **argv)
