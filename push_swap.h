@@ -6,7 +6,7 @@
 /*   By: melipola <melipola@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:01:56 by melipola          #+#    #+#             */
-/*   Updated: 2026/04/20 13:04:41 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:11:24 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,6 @@ void		rrr(t_node **a, t_node **b, t_ops *ops);
 
 void		add_back(t_node **lst, t_node *new_node);
 t_node		*new_lst(int value);
-int			list_size(t_node *a);
 
 char		*join_args(int argc, char **argv);
 int			total_length(int argc, char **argv);
