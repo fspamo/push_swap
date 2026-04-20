@@ -6,13 +6,13 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 16:30:53 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/19 16:31:04 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:26:13 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	normalize(t_node *a)
+static void	normalize(t_node *a)
 {
 	t_node	*i;
 	t_node	*j;
@@ -34,7 +34,7 @@ void	normalize(t_node *a)
 	}
 }
 
-int	count_bits(int max)
+static int	count_bits(int max)
 {
 	int	bits;
 
@@ -44,7 +44,7 @@ int	count_bits(int max)
 	return (bits);
 }
 
-void	radix_pass(t_node **a, t_node **b, t_ops *ops, int bit)
+static void	radix_pass(t_node **a, t_node **b, t_ops *ops, int bit)
 {
 	int	j;
 	int	size;
