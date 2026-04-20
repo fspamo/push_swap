@@ -89,7 +89,6 @@ ARG="4 67 3 87 23"
 
 The program prints `Error` to `stderr` and exits if:
 - Any argument is not a valid integer
-- An integer is out of `INT` range
 - There are duplicate values
 
 ---
