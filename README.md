@@ -59,6 +59,9 @@ This produces the `push_swap` binary. Use `make clean` to remove object files, `
 
 If no strategy flag is given, `--adaptive` is used by default.
 
+If multiple strategies given, the program proceeds with the last given strategy since it wasn't clarified enough in the 
+subject and it's programmers' desire to handle.
+
 **`--bench` flag:** Prints sorting statistics (disorder, strategy used, total ops, per-operation counts) to `stderr` after sorting.
 
 ### Examples
