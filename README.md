@@ -100,7 +100,7 @@ The program prints `Error` to `stderr` and exits if:
 Before any sorting begins, the program computes a **disorder score** between `0.0` (already sorted) and `1.0` (fully reversed). It counts adjacent inversions:
 
 ```
-disorder = inversions / (n - 1)
+disorder = mistakes / total pairs
 ```
 
 This score drives the adaptive strategy selection.
