@@ -6,13 +6,13 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/22 14:44:20 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:33:19 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:25:07 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max_index(t_node *b)
+static int	find_max_index(t_node *b)
 {
 	t_node	*holder;
 	int		highest;
@@ -30,7 +30,7 @@ int	find_max_index(t_node *b)
 	return (highest);
 }
 
-int	find_position(t_node *b, int highest)
+static int	find_position(t_node *b, int highest)
 {
 	t_node	*holder;
 	int		position;
@@ -47,7 +47,7 @@ int	find_position(t_node *b, int highest)
 	return (-1);
 }
 
-void	chunker(t_node **a, t_node **b, t_ops *ops)
+static void	chunker(t_node **a, t_node **b, t_ops *ops)
 {
 	int	size;
 	int	chunk;
