@@ -6,7 +6,7 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 00:26:32 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/19 23:31:49 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 17:02:55 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	default_controls(t_node *a, t_ops *ops, int bench)
 	{
 		if (bench == 1)
 			benchmarking(ops, 0, disholder);
+		free_list(&a);
 		exit (1);
 	}
 }
@@ -41,7 +42,10 @@ void	is_duped(t_node *a)
 		while (holder)
 		{
 			if (holder->value == curr->value)
+			{
+				free_list(&a);
 				print_error();
+			}
 			holder = holder->next;
 		}
 		curr = curr->next;
@@ -59,6 +63,7 @@ int	is_sorted(t_node *a)
 			return (0);
 		temp = temp->next;
 	}
+	free_list(&a);
 	exit (1);
 }
 

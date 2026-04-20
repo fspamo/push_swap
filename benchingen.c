@@ -6,12 +6,13 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/01 17:00:17 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/20 13:07:54 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 16:59:36 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 static void	print_disorder(float disorder)
 {
@@ -54,18 +55,21 @@ static void	print_ops_line2(t_ops *ops)
 
 void	benchmarking(t_ops *ops, int strat, float disorder)
 {
-	int	total;
+	int		total;
+	char	*name;
 
+	name = strat_name(strat, disorder);
 	total = ops->sa + ops->sb + ops->ss + ops->pa + ops->pb
 		+ ops->ra + ops->rb + ops->rr + ops->rra + ops->rrb + ops->rrr;
 	print_disorder(disorder);
 	write(2, "[bench] strategy: ", 18);
-	write(2, strat_name(strat, disorder),
-		ft_strlen(strat_name(strat, disorder)));
+	write(2, name, ft_strlen(name));
 	write(2, "\n", 1);
 	write(2, "[bench] total_ops: ", 19);
 	put_nbr_fd(total, 2);
 	write(2, "\n", 1);
 	print_ops_line1(ops);
 	print_ops_line2(ops);
+	if (strat == 3)
+		free(name);
 }
