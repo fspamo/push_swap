@@ -152,8 +152,8 @@ For inputs of 5 or fewer elements, a dedicated hardcoded solver is used regardle
 
 | Login | Contributions |
 |-------|--------------|
-| `cbozkurt` | Core architecture, stack operations, radix sort, chunk sort, indexer, disorder metric, benchmark system, Makefile |
-| `melipola` | Bubble sort, input validation & parsing, five-or-less solver, argument handling, header consolidation, testing |
+| `cbozkurt` | Core architecture, parsing, stack operations, radix sort, chunk sort, indexer, disorder metric, benchmark system, Makefile |
+| `melipola` | Bubble sort, memory management and safe coding, input validation & parsing, five-or-less solver, chunk sort, argument handling, header consolidation, testing |
 
 ---
 
