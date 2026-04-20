@@ -6,14 +6,14 @@
 /*   By: cbozkurt <cbozkurt@student.42kocaeli.com.  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/08 02:18:43 by cbozkurt          #+#    #+#             */
-/*   Updated: 2026/04/16 00:10:39 by cbozkurt         ###   ########.fr       */
+/*   Updated: 2026/04/20 13:22:47 by cbozkurt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdlib.h>
 
-int	*copy_array(t_node *a, int size)
+static int	*copy_array(t_node *a, int size)
 {
 	int		i;
 	int		*array;
@@ -33,7 +33,7 @@ int	*copy_array(t_node *a, int size)
 	return (array);
 }
 
-void	sort_arr(int *array, int size)
+static void	sort_arr(int *array, int size)
 {
 	int	temp;
 	int	i;
@@ -57,7 +57,7 @@ void	sort_arr(int *array, int size)
 	}
 }
 
-void	index_numbers(t_node *a, int *array, int size)
+static void	index_numbers(t_node *a, int *array, int size)
 {
 	t_node	*holder;
 	int		i;
@@ -79,7 +79,7 @@ void	index_numbers(t_node *a, int *array, int size)
 	}
 }
 
-void	core_indexer(t_node *a)
+static void	core_indexer(t_node *a)
 {
 	int	*array;
 	int	size;
